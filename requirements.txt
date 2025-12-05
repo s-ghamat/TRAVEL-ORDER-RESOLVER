@@ -1,0 +1,58 @@
+# ============================================
+# TRAVEL ORDER RESOLVER - NLP Project
+# Phase 1: spaCy Baseline + Phase 2: Qwen2.5 + ChromaDB
+# ============================================
+
+# ===== PHASE 1: spaCy Baseline =====
+spacy>=3.7.0
+# Modèles français spaCy (à installer avec: python -m spacy download)
+# fr_core_news_sm (small - 13MB)
+# fr_core_news_md (medium - 43MB) - RECOMMANDÉ
+# fr_core_news_lg (large - 500MB)
+
+# ===== PHASE 2: Transformers & Modern NLP =====
+transformers>=4.35.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+
+# ===== PHASE 2: ChromaDB (réutilise Virida) =====
+chromadb==0.4.24
+# FIX: NumPy 2.0 incompatible avec ChromaDB 0.4.24
+numpy<2.0.0
+
+# ===== PHASE 2: Qwen2.5 LLM Local (réutilise Virida) =====
+llama-cpp-python>=0.2.78
+huggingface-hub>=0.24.0
+
+# ===== PHASE 2: BM25 Recherche Hybride (bonus) =====
+rank-bm25==0.2.2
+
+# ===== Data Processing =====
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# ===== Evaluation & Metrics =====
+seqeval>=1.2.2  # NER evaluation
+nltk>=3.8.1
+
+# ===== Graph & Path Finding (bonus train routes) =====
+networkx>=3.1
+
+# ===== Utilities =====
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+requests>=2.31.0
+
+# ===== Jupyter for experiments =====
+jupyter>=1.0.0
+ipywidgets>=8.1.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# ===== Testing =====
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# ===== Optional: Voice Recognition (bonus) =====
+# speechrecognition>=3.10.0
+# pydub>=0.25.1
