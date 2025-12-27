@@ -1,0 +1,13 @@
+sentence_id,sentence,expected_dep,expected_dest,expected_valid
+1,Je souhaite me rendre à Paris depuis Toulouse,Toulouse,Paris,1
+2,Je veux aller de Bordeaux à Lille,Bordeaux,Lille,1
+3,Je vais à Nantes depuis Lyon,Lyon,Nantes,1
+4,Bonjour comment ça va,,,0
+5,Je veux aller à Paris,,,0
+6,Je pars de Lyon,,,0
+7,Je veux aller de Paris à Paris,,,0
+8,Je veux aller de Paris ou Lyon à Marseille,,,0
+9,Je souhaite aller de Nice à Rennes,Nice,Rennes,1
+10,Je veux un trajet de Strasbourg vers Montpellier,Strasbourg,Montpellier,1
+11,Salut,,,0
+12,Je vais à Marseille depuis Bordeaux,Bordeaux,Marseille,1

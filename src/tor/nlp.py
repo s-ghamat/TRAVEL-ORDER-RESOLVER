@@ -8,14 +8,17 @@ from unidecode import unidecode
 from rapidfuzz import process, fuzz
 
 
-# ---- City loading + normalization ----
+# -----------------------------
+# Normalization + city loading
+# -----------------------------
 
 def _norm(s: str) -> str:
     """
-    Normalization for robust matching:
+    Normalize a string for robust matching:
     - lowercase
     - remove accents
-    - keep letters/numbers/spaces/hyphens
+    - unify apostrophes
+    - keep letters/numbers/spaces/hyphens/apostrophes
     - collapse whitespace
     """
     s = unidecode(s).lower()
@@ -26,32 +29,55 @@ def _norm(s: str) -> str:
 
 
 def _load_cities() -> List[str]:
-    # data/cities.txt relative to repo root (works when running from repo)
+    """
+    Loads cities from data/cities.txt (one per line, UTF-8).
+    Returns [] if file doesn't exist (so code still runs).
+    """
     path = Path("data") / "cities.txt"
     if not path.exists():
         return []
-    cities = [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
-    return cities
+    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 CITIES = _load_cities()
 CITIES_NORM = {_norm(c): c for c in CITIES}  # normalized -> canonical
 
 
+# -----------------------------
+# Matching helper
+# -----------------------------
+
 def _best_city_match(fragment: str, score_cutoff: int = 90) -> Optional[str]:
     """
-    Fuzzy match a fragment to a city. Returns canonical city name or None.
+    Match a fragment of text to a city (canonical name) using:
+    1) exact normalized match
+    2) ambiguity check (multiple cities inside same fragment)
+    3) fuzzy match (RapidFuzz)
     """
     if not CITIES:
         return None
 
     frag_n = _norm(fragment)
+    if not frag_n:
+        return None
 
-    # Exact / near-exact match on normalized strings
+    # 1) Exact/near-exact normalized match
     if frag_n in CITIES_NORM:
         return CITIES_NORM[frag_n]
 
-    # Fuzzy match: compares fragment to normalized city names
+    # 2) Ambiguity check: if the fragment contains multiple city names, reject
+    contained = []
+    for city_norm, city_can in CITIES_NORM.items():
+        # simple containment test on normalized strings
+        if city_norm and city_norm in frag_n:
+            contained.append(city_can)
+
+    if len(contained) > 1:
+        return None
+    if len(contained) == 1:
+        return contained[0]
+
+    # 3) Fuzzy match against normalized city names
     choices = list(CITIES_NORM.keys())
     match = process.extractOne(
         frag_n,
@@ -62,13 +88,14 @@ def _best_city_match(fragment: str, score_cutoff: int = 90) -> Optional[str]:
     if not match:
         return None
 
-    best_norm, score, _idx = match
+    best_norm, _score, _idx = match
     return CITIES_NORM[best_norm]
 
 
-# ---- Pattern-based parsing ----
+# -----------------------------
+# Rule-based patterns (Step 2)
+# -----------------------------
 
-# We keep patterns simple first, then add more later.
 _PATTERNS = [
     # "de X à Y"
     re.compile(r"\bde\s+(?P<dep>.+?)\s+(?:a|à)\s+(?P<dest>.+?)\b", re.IGNORECASE),
@@ -82,27 +109,49 @@ _PATTERNS = [
     re.compile(r"\b(?:me\s+rendre|rendre)\s+(?:a|à)\s+(?P<dest>.+?)\s+depuis\s+(?P<dep>.+?)\b", re.IGNORECASE),
 ]
 
+# Step 3: travel keyword filter to quickly reject trash texts
+TRAVEL_KEYWORDS = {
+    "aller", "vais", "va", "allons", "allez",
+    "rendre", "trajet", "voyage",
+    "train", "bus", "avion",
+    "de", "depuis", "vers", "a", "à",
+}
+
 
 def _clean_slot(text: str) -> str:
-    # Stop at common trailing words that are not part of city name
-    text = re.split(r"\b(?:aujourd|demain|ce\s+soir|svp|s'il\s+te\s+plait|merci)\b", text, maxsplit=1, flags=re.IGNORECASE)[0]
+    """
+    Cleanup a captured group (departure/destination chunk).
+    Removes trailing punctuation and common polite/time words.
+    """
+    text = re.split(
+        r"\b(?:aujourd|demain|ce\s+soir|svp|s'il\s+te\s+plait|s'il\s+vous\s+plait|merci)\b",
+        text,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )[0]
     text = text.strip(" ,;:.!?")
     return text.strip()
 
 
+# -----------------------------
+# Main function used by CLI
+# -----------------------------
+
 def parse_order(sentence: str) -> Optional[Tuple[str, str]]:
     """
-    Return (departure, destination) in canonical city names if recognized.
-    Else return None -> INVALID.
+    Returns (departure, destination) as canonical city names when recognized.
+    Returns None if invalid / incomplete / ambiguous.
     """
     s = sentence.strip()
-    if not s:
+    if not s or len(s) < 4:
         return None
 
-    # Quick reject: too short
-    if len(s) < 4:
+    # Step 3: Quick reject for non-travel sentences (trash text)
+    s_norm = _norm(s)
+    if not any(k in s_norm.split() or k in s_norm for k in TRAVEL_KEYWORDS):
         return None
 
+    # Try pattern-based extraction
     for pat in _PATTERNS:
         m = pat.search(s)
         if not m:
@@ -114,7 +163,15 @@ def parse_order(sentence: str) -> Optional[Tuple[str, str]]:
         dep = _best_city_match(dep_raw)
         dest = _best_city_match(dest_raw)
 
-        if dep and dest and dep != dest:
-            return dep, dest
+        # Reject incomplete
+        if not dep or not dest:
+            return None
 
+        # Reject same-city travel
+        if dep == dest:
+            return None
+
+        return dep, dest
+
+    # If no pattern matched, it's incomplete/unsupported -> INVALID
     return None
