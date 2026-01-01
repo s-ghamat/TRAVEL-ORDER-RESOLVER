@@ -1,0 +1,501 @@
+sentence_id,sentence,expected_dep,expected_dest,expected_valid
+1,Bonjour,,,0
+2,Comment ça va,,,0
+3,Je veux aller de Marseille à Dijon,Marseille,Dijon,1
+4,Je souhaite me rendre à Nantes depuis Lyon,Lyon,Nantes,1
+5,Je veux un trajet de Nantes vers Dijon,Nantes,Dijon,1
+6,Je vais à Le Havre depuis Lille,Lille,Le Havre,1
+7,Je veux aller de Nice à Marseille,Nice,Marseille,1
+8,Je veux aller de Grenoble à Montpellier,Grenoble,Montpellier,1
+9,Aller de Saint-Etienne à Lyon s'il vous plaît,Saint-Etienne,Lyon,1
+10,Je m'appelle Paul,,,0
+11,Salut,,,0
+12,Je veux aller de Strasbourg à Rennes,Strasbourg,Rennes,1
+13,Aller à Reims s'il te plaît,,,0
+14,Je vais à Nantes depuis Grenoble,Grenoble,Nantes,1
+15,Salut,,,0
+16,Merci,,,0
+17,Je veux un trajet de Strasbourg vers Lille,Strasbourg,Lille,1
+18,Je veux aller de Dijon ou Strasbourg à Nice,,,0
+19,Je veux un trajet de Toulouse vers Nice,Toulouse,Nice,1
+20,Je souhaite me rendre à Nice depuis Nimes,Nimes,Nice,1
+21,Je vais à Bordeaux depuis Reims,Reims,Bordeaux,1
+22,Paris est une belle ville,,,0
+23,Je veux aller à Strasbourg,,,0
+24,Je veux aller de Loyn à Toulosue,Lyon,Toulouse,1
+25,Je veux aller de Dijon à Paris,Dijon,Paris,1
+26,Je veux aller de Montpellier à Nice,Montpellier,Nice,1
+27,Aller de Paris à Montpellier s'il vous plaît,Paris,Montpellier,1
+28,Aller de Marseille à Rennes s'il vous plaît,Marseille,Rennes,1
+29,Aller de Lille à Dijon s'il vous plaît,Lille,Dijon,1
+30,J'aime le train,,,0
+31,Je souhaite me rendre à Rennes depuis Grenoble,Grenoble,Rennes,1
+32,Aller de Toulon à Lyon s'il vous plaît,Toulon,Lyon,1
+33,Je souhaite me rendre à Dijon depuis Toulon,Toulon,Dijon,1
+34,Je veux aller à Nantes,,,0
+35,Paris est une belle ville,,,0
+36,Je souhaite aller de Nimes à Marseille ou Strasbourg,,,0
+37,Aller de Pars à Nimes s'il vous plaît,Paris,Nimes,1
+38,Je veux aller de Toulouse à Nice,Toulouse,Nice,1
+39,Aller de Toulon à Nantes s'il vous plaît,Toulon,Nantes,1
+40,Je souhaite me rendre à Le Hvare depuis Toulon,Toulon,Le Havre,1
+41,Je veux aller à Marseille,,,0
+42,Je souhaite me rendre à Mareille depuis Nice,Nice,Marseille,1
+43,Aller de Lyon à Reims s'il vous plaît,Lyon,Reims,1
+44,Je souhaite me rendre à Strasbourg depuis Lyon,Lyon,Strasbourg,1
+45,Je souhaite me rendre à Toulouse depuis Saint-Etienne,Saint-Etienne,Toulouse,1
+46,Je souhaite aller de Bordeaux à Dijon ou Toulon,,,0
+47,Aller de Nantes à Toulouse s'il vous plaît,Nantes,Toulouse,1
+48,Je veux aller de Nice à Toulouse,Nice,Toulouse,1
+49,Je veux aller de Angers à Lille,Angers,Lille,1
+50,Aller de Lille à Lon s'il vous plaît,Lille,Lyon,1
+51,Paris est une belle ville,,,0
+52,Je m'appelle Paul,,,0
+53,Je souhaite aller de Rennes à Saint-Etienne ou Bordeaux,,,0
+54,Je veux un trajet de Lyon vers Paris,Lyon,Paris,1
+55,Salut,,,0
+56,Je vais à Anges depuis Nates,Nantes,Angers,1
+57,Je pars de Clermont-Ferrand,,,0
+58,Quel temps fait-il,,,0
+59,Je veux aller de Marseille ou Bordeaux à Montpellier,,,0
+60,Depuis Bordeaux,,,0
+61,Je souhaite me rendre à Nice depuis Nantes,Nantes,Nice,1
+62,Je pars de Montpellier,,,0
+63,Je veux aller de Le Havre à Montpellier,Le Havre,Montpellier,1
+64,Je veux un trajet de Reims vers Dijon,Reims,Dijon,1
+65,Je veux aller de Bordeaux à Dijon,Bordeaux,Dijon,1
+66,Merci,,,0
+67,Je vais à Rennes depuis Toulouse,Toulouse,Rennes,1
+68,Je pars de Grenoble,,,0
+69,Salut,,,0
+70,Aller de Dijon à Le Havre s'il vous plaît,Dijon,Le Havre,1
+71,Je souhaite aller de Nice à Paris ou Lille,,,0
+72,Aller à Strasbourg s'il te plaît,,,0
+73,Je veux aller de Marseille à Saint-Etienne,Marseille,Saint-Etienne,1
+74,Je vais à Grenoble depuis Reims,Reims,Grenoble,1
+75,Aller à Nantes s'il te plaît,,,0
+76,Je vais à Montpellier depuis Lyon,Lyon,Montpellier,1
+77,Je veux aller de Dijon à Ncie,Dijon,Nice,1
+78,Je vais à Grenoble depuis Le Havre,Le Havre,Grenoble,1
+79,Je souhaite aller de Paris à Toulouse ou Le Havre,,,0
+80,Je vais à Nantes depuis Dijon,Dijon,Nantes,1
+81,Je souhaite aller de Le Havre à Angers ou Rennes,,,0
+82,Je souhaite me rendre à Dijn depuis Rennes,Rennes,Dijon,1
+83,Paris est une belle ville,,,0
+84,Je vais à Rennes depuis Paris,Paris,Rennes,1
+85,Je souhaite me rendre à Clermont-Ferrand depuis Reims,Reims,Clermont-Ferrand,1
+86,Je pars de Lille,,,0
+87,Je veux aller de Clermont-Ferrand à Nice,Clermont-Ferrand,Nice,1
+88,Je pars de Strasbourg,,,0
+89,Je veux un trajet de Toulouse vers Strasbourg,Toulouse,Strasbourg,1
+90,Je veux aller à Nimes,,,0
+91,Paris est une belle ville,,,0
+92,Je veux aller de Strasbourg à Bordeaux,Strasbourg,Bordeaux,1
+93,Je pars de Le Havre,,,0
+94,Je veux aller de Angers à Reims,Angers,Reims,1
+95,Je souhaite aller de Nice à Angers ou Dijon,,,0
+96,Je souhaite aller de Reims à Lille ou Toulon,,,0
+97,Aller de Strasbourg à Montpellier s'il vous plaît,Strasbourg,Montpellier,1
+98,Je vais à Loyn depuis Rims,Reims,Lyon,1
+99,Salut,,,0
+100,Je veux un trajet de Nice vers Dijon,Nice,Dijon,1
+101,Aller de Le Havre à Saint-Etienne s'il vous plaît,Le Havre,Saint-Etienne,1
+102,Je veux un trajet de Niems vers Saint-Etienne,Nimes,Saint-Etienne,1
+103,Comment ça va,,,0
+104,Je veux un trajet de Monptellier vers Le Havre,Montpellier,Le Havre,1
+105,Je souhaite aller de Paris à Nimes ou Clermont-Ferrand,,,0
+106,Je veux un trajet de LeH avre vers Bordaeux,Le Havre,Bordeaux,1
+107,Je veux aller de Le Havre à Montpellier,Le Havre,Montpellier,1
+108,Bonjour,,,0
+109,Je veux aller de Grenoble ou Strasbourg à Lyon,,,0
+110,Je pars de Nantes,,,0
+111,Comment ça va,,,0
+112,Je souhaite me rendre à Nimes depuis Marseille,Marseille,Nimes,1
+113,Aller de Grenoble à Lille s'il vous plaît,Grenoble,Lille,1
+114,Salut,,,0
+115,Je veux aller à Rennes,,,0
+116,Quel temps fait-il,,,0
+117,Paris est une belle ville,,,0
+118,Aller de Nantes à Lyon s'il vous plaît,Nantes,Lyon,1
+119,Salut,,,0
+120,Quel temps fait-il,,,0
+121,Je pars de Marseille,,,0
+122,Je veux aller de Le Havre à Grenoble,Le Havre,Grenoble,1
+123,Je veux aller de Le Havre à Toulon,Le Havre,Toulon,1
+124,Je veux un trajet de Reims vers Bordeaux,Reims,Bordeaux,1
+125,J'aime le train,,,0
+126,Je vais à Montpellier depuis Nimes,Nimes,Montpellier,1
+127,Je veux aller à Reims,,,0
+128,Depuis Saint-Etienne,,,0
+129,Je veux un trajet de Nice vers Llile,Nice,Lille,1
+130,Je souhaite me rendre à Lyon depuis Nantes,Nantes,Lyon,1
+131,Je veux un trajet de Strasbourg vers Toulon,Strasbourg,Toulon,1
+132,Je veux un trajet de Rennes vers Strasbourg,Rennes,Strasbourg,1
+133,Je veux un trajet de Nimes vers Grenoble,Nimes,Grenoble,1
+134,Je vais à Nice depuis Dijon,Dijon,Nice,1
+135,Je veux aller de Montpellier à Strasbourg,Montpellier,Strasbourg,1
+136,Je souhaite me rendre à Lille depuis Djion,Dijon,Lille,1
+137,Je vais à Lile depuis Grenoble,Grenoble,Lille,1
+138,Je veux aller de Bordeaux à Toulon,Bordeaux,Toulon,1
+139,J'aime le train,,,0
+140,Je veux aller de Nice à Lille,Nice,Lille,1
+141,Aller à Lyon s'il te plaît,,,0
+142,Je souhaite me rendre à Tulouse depuis Nimes,Nimes,Toulouse,1
+143,Paris est une belle ville,,,0
+144,Comment ça va,,,0
+145,Aller à Reims s'il te plaît,,,0
+146,Je pars de Rennes,,,0
+147,Salut,,,0
+148,Je veux aller de Nantes ou Clermont-Ferrand à Montpellier,,,0
+149,Je veux aller de Lille à Diojn,Lille,Dijon,1
+150,J'aime le train,,,0
+151,Aller de Strasbourg à Montpellier s'il vous plaît,Strasbourg,Montpellier,1
+152,Je veux aller de Le Havre ou Marseille à Dijon,,,0
+153,Quel temps fait-il,,,0
+154,Aller à Lille s'il te plaît,,,0
+155,Quel temps fait-il,,,0
+156,Je veux un trajet de Reims vers Rennes,Reims,Rennes,1
+157,Je veux aller de Toulon à Reims,Toulon,Reims,1
+158,Depuis Clermont-Ferrand,,,0
+159,Aller de Strasbourg à Nimes s'il vous plaît,Strasbourg,Nimes,1
+160,Je veux aller de Montpellier ou Nimes à Toulouse,,,0
+161,Je souhaite me rendre à Montpellier depuis Reims,Reims,Montpellier,1
+162,Je veux un trajet de Toulon vers Lyon,Toulon,Lyon,1
+163,Je vais à Lille depuis Marseille,Marseille,Lille,1
+164,Je veux aller de Saint-Etienne à Dijon,Saint-Etienne,Dijon,1
+165,Je veux un trajet de Nice vers Marseille,Nice,Marseille,1
+166,Aller à Dijon s'il te plaît,,,0
+167,Je vais à Angers depuis Nantes,Nantes,Angers,1
+168,Je souhaite me rendre à Toulouse depuis Reims,Reims,Toulouse,1
+169,Je veux un trajet de Rennes vers Reims,Rennes,Reims,1
+170,Aller de Llle à Renes s'il vous plaît,Lille,Rennes,1
+171,Je vais à Angers depuis Rennes,Rennes,Angers,1
+172,Je veux un trajet de Toulon vers Strasbourg,Toulon,Strasbourg,1
+173,Je souhaite me rendre à Angers depuis Clermont-Ferrand,Clermont-Ferrand,Angers,1
+174,Aller de Le Havre à Nice s'il vous plaît,Le Havre,Nice,1
+175,Aller de Rennes à Nimes s'il vous plaît,Rennes,Nimes,1
+176,Aller de Bordeaux à Reims s'il vous plaît,Bordeaux,Reims,1
+177,Je veux un trajet de Dijon vers Saint-Etienne,Dijon,Saint-Etienne,1
+178,Depuis Strasbourg,,,0
+179,Je vais à Toulouse depuis Le Havre,Le Havre,Toulouse,1
+180,Paris est une belle ville,,,0
+181,Je veux aller de Bordeaux à Touln,Bordeaux,Toulon,1
+182,Je souhaite me rendre à Paris depuis Reims,Reims,Paris,1
+183,Merci,,,0
+184,Aller de Montpellier à Nice s'il vous plaît,Montpellier,Nice,1
+185,Je m'appelle Paul,,,0
+186,Depuis Saint-Etienne,,,0
+187,J'aime le train,,,0
+188,Je veux aller à Lyon,,,0
+189,Quel temps fait-il,,,0
+190,Je veux aller de Lyon ou Le Havre à Marseille,,,0
+191,Je veux aller de Rennes à Paris,Rennes,Paris,1
+192,Je veux un trajet de Grenoble vers Clermont-Ferrand,Grenoble,Clermont-Ferrand,1
+193,Aller à Lyon s'il te plaît,,,0
+194,Comment ça va,,,0
+195,Je souhaite me rendre à Bordeaux depuis Nimes,Nimes,Bordeaux,1
+196,Je veux un trajet de Montpellier vers Paris,Montpellier,Paris,1
+197,Merci,,,0
+198,Je vais à Nimes depuis Grenoble,Grenoble,Nimes,1
+199,Je vais à Remis depuis Motnpellier,Montpellier,Reims,1
+200,Je souhaite aller de Toulouse à Paris ou Nimes,,,0
+201,Je souhaite aller de Montpellier à Strasbourg ou Nantes,,,0
+202,Merci,,,0
+203,Bonjour,,,0
+204,Aller de Reims à Toulouse s'il vous plaît,Reims,Toulouse,1
+205,Je veux un trajet de Renens vers Nice,Rennes,Nice,1
+206,Je veux un trajet de Lille vers Montpellier,Lille,Montpellier,1
+207,Je veux un trajet de Nice vers Marseille,Nice,Marseille,1
+208,Aller de Strasbourg à Saint-Etienne s'il vous plaît,Strasbourg,Saint-Etienne,1
+209,Je veux aller à Dijon,,,0
+210,Je veux un trajet de Montpellier vers Nimes,Montpellier,Nimes,1
+211,Je veux aller de Marseille ou Strasbourg à Toulon,,,0
+212,Je m'appelle Paul,,,0
+213,Je souhaite aller de Bordeaux à Le Havre ou Marseille,,,0
+214,Je veux un trajet de Touluse vers Renens,Toulouse,Rennes,1
+215,Merci,,,0
+216,Depuis Toulon,,,0
+217,Je veux aller de Montpellier ou Toulouse à Grenoble,,,0
+218,Je veux aller de Strasbourg à Grenoble,Strasbourg,Grenoble,1
+219,Je veux un trajet de Grenoble vers Toulouse,Grenoble,Toulouse,1
+220,Je veux aller de Reims ou Lyon à Nantes,,,0
+221,Je souhaite me rendre à Strasbourg depuis Nice,Nice,Strasbourg,1
+222,Aller de Dijon à Nntes s'il vous plaît,Dijon,Nantes,1
+223,Aller de Bordeaux à Clermont-Ferrand s'il vous plaît,Bordeaux,Clermont-Ferrand,1
+224,Je veux aller de Paris à Bordeaux,Paris,Bordeaux,1
+225,Je pars de Paris,,,0
+226,Aller de Boredaux à Le Havre s'il vous plaît,Bordeaux,Le Havre,1
+227,Aller de Angers à Strasbourg s'il vous plaît,Angers,Strasbourg,1
+228,Je veux aller de Reims à Paris,Reims,Paris,1
+229,Aller à Marseille s'il te plaît,,,0
+230,J'aime le train,,,0
+231,Aller de Loyn à Nice s'il vous plaît,Lyon,Nice,1
+232,Aller de Reims à Angers s'il vous plaît,Reims,Angers,1
+233,Je veux aller à Dijon,,,0
+234,Je vais à Le Havre depuis Strasbourg,Strasbourg,Le Havre,1
+235,Je veux un trajet de Marseille vers Nice,Marseille,Nice,1
+236,Je veux aller de Brodeaux à Toulon,Bordeaux,Toulon,1
+237,Je veux aller de Bordeaux à Dijon,Bordeaux,Dijon,1
+238,Je m'appelle Paul,,,0
+239,Paris est une belle ville,,,0
+240,Je vais à Toulouse depuis Le Havre,Le Havre,Toulouse,1
+241,Je souhaite me rendre à Angers depuis Nies,Nimes,Angers,1
+242,Je souhaite me rendre à Nimes depuis Montpellier,Montpellier,Nimes,1
+243,Je pars de Clermont-Ferrand,,,0
+244,Quel temps fait-il,,,0
+245,Je vais à Rennes depuis Montpellier,Montpellier,Rennes,1
+246,Je veux un trajet de Bordeaux vers Nimes,Bordeaux,Nimes,1
+247,Je veux un trajet de Angers vers Nantes,Angers,Nantes,1
+248,Je vais à Rennes depuis Grenoble,Grenoble,Rennes,1
+249,Salut,,,0
+250,Je veux aller à Clermont-Ferrand,,,0
+251,Quel temps fait-il,,,0
+252,Aller de Le Havre à Toulon s'il vous plaît,Le Havre,Toulon,1
+253,Je vais à Marseille depuis Angers,Angers,Marseille,1
+254,Aller de Nimes à Toulon s'il vous plaît,Nimes,Toulon,1
+255,Je veux aller de Saint-Etienne à Toulouse,Saint-Etienne,Toulouse,1
+256,Je veux aller à Marseille,,,0
+257,Je souhaite me rendre à Lille depuis Le Havre,Le Havre,Lille,1
+258,Je m'appelle Paul,,,0
+259,Je veux aller de Toulouse à Le Havre,Toulouse,Le Havre,1
+260,Je veux un trajet de Nice vers Nimes,Nice,Nimes,1
+261,Paris est une belle ville,,,0
+262,Je vais à Prais depuis Saint-Etienne,Saint-Etienne,Paris,1
+263,Je veux un trajet de Marseille vers Strasbourg,Marseille,Strasbourg,1
+264,Je vais à Renes depuis Saint-Etienne,Saint-Etienne,Rennes,1
+265,Je veux aller de Grenoble ou Clermont-Ferrand à Bordeaux,,,0
+266,Je souhaite me rendre à Nantes depuis Montpellier,Montpellier,Nantes,1
+267,Depuis Lille,,,0
+268,Je veux un trajet de Nimes vers Clermont-Ferrand,Nimes,Clermont-Ferrand,1
+269,Depuis Clermont-Ferrand,,,0
+270,Depuis Bordeaux,,,0
+271,Je vais à Rennes depuis Reims,Reims,Rennes,1
+272,Je veux un trajet de Lyon vers Rennes,Lyon,Rennes,1
+273,Je veux aller de Rennes à Lyon,Rennes,Lyon,1
+274,Aller de Reims à Nimes s'il vous plaît,Reims,Nimes,1
+275,Bonjour,,,0
+276,Je vais à Nantes depuis Nimes,Nimes,Nantes,1
+277,Je veux aller de Toulouse à Reims,Toulouse,Reims,1
+278,Je pars de Lyon,,,0
+279,Aller de Reims à Clermont-Ferrand s'il vous plaît,Reims,Clermont-Ferrand,1
+280,Je veux un trajet de Grenoble vers Rennes,Grenoble,Rennes,1
+281,Je vais à Tououse depuis Clermnot-Ferrand,Clermont-Ferrand,Toulouse,1
+282,Je vais à Grenoble depuis Bordeaux,Bordeaux,Grenoble,1
+283,Paris est une belle ville,,,0
+284,Aller de Lyon à Rennes s'il vous plaît,Lyon,Rennes,1
+285,Je pars de Angers,,,0
+286,Paris est une belle ville,,,0
+287,Je vais à Grnoble depuis Prais,Paris,Grenoble,1
+288,Aller de Marseille à Angers s'il vous plaît,Marseille,Angers,1
+289,Je veux aller à Nice,,,0
+290,Merci,,,0
+291,Je veux un trajet de ClermontFerrand vers Lille,Clermont-Ferrand,Lille,1
+292,Je pars de Strasbourg,,,0
+293,Je vais à Nantes depuis Toulon,Toulon,Nantes,1
+294,J'aime le train,,,0
+295,Aller de Rennes à Saint-Etienne s'il vous plaît,Rennes,Saint-Etienne,1
+296,Je veux aller de Nantes ou Bordeaux à Montpellier,,,0
+297,Je m'appelle Paul,,,0
+298,Salut,,,0
+299,Salut,,,0
+300,Je veux un trajet de Lille vers Montpellier,Lille,Montpellier,1
+301,Je souhaite me rendre à Lyon depuis Le Havre,Le Havre,Lyon,1
+302,Je pars de Le Havre,,,0
+303,Je veux un trajet de Grenoble vers Strasbourg,Grenoble,Strasbourg,1
+304,Je veux aller de Paris à Nice,Paris,Nice,1
+305,Merci,,,0
+306,Je souhaite me rendre à Toulon depuis Rennes,Rennes,Toulon,1
+307,Je veux aller de Clermont-errand à Paris,Clermont-Ferrand,Paris,1
+308,Paris est une belle ville,,,0
+309,Je vais à Strasoburg depuis Rnenes,Rennes,Strasbourg,1
+310,Je souhaite me rendre à Nimes depuis Angers,Angers,Nimes,1
+311,Je souhaite me rendre à Grenoble depuis Paris,Paris,Grenoble,1
+312,Je vais à Angers depuis Lyon,Lyon,Angers,1
+313,Je souhaite aller de Grenoble à Toulouse ou Saint-Etienne,,,0
+314,Je veux aller de Paris à Grenoble,Paris,Grenoble,1
+315,Salut,,,0
+316,Je pars de Nice,,,0
+317,Je souhaite me rendre à Nice depuis Dijon,Dijon,Nice,1
+318,J'aime le train,,,0
+319,Merci,,,0
+320,Je vais à Toulouse depuis Reims,Reims,Toulouse,1
+321,Je veux un trajet de Rennes vers Angers,Rennes,Angers,1
+322,Je souhaite me rendre à Toulouse depuis Montpellier,Montpellier,Toulouse,1
+323,Aller à Nice s'il te plaît,,,0
+324,Je veux un trajet de Grenoble vers Le Havre,Grenoble,Le Havre,1
+325,Aller à Lille s'il te plaît,,,0
+326,Je m'appelle Paul,,,0
+327,Je souhaite aller de Lille à Lyon ou Le Havre,,,0
+328,Je veux aller de Nice à Marseille,Nice,Marseille,1
+329,Je souhaite me rendre à Le Havre depuis Reims,Reims,Le Havre,1
+330,Aller de Toulouse à Grenoble s'il vous plaît,Toulouse,Grenoble,1
+331,Je veux un trajet de Toulouse vers Lyon,Toulouse,Lyon,1
+332,Je pars de Paris,,,0
+333,Je pars de Reims,,,0
+334,Je vais à Grenoble depuis Strasbourg,Strasbourg,Grenoble,1
+335,Merci,,,0
+336,Je m'appelle Paul,,,0
+337,Je souhaite me rendre à Nimes depuis Lyon,Lyon,Nimes,1
+338,Je veux aller de Motnpellier à Strasbuorg,Montpellier,Strasbourg,1
+339,Je veux un trajet de ClermontFerrand vers Rnenes,Clermont-Ferrand,Rennes,1
+340,Depuis Nice,,,0
+341,Quel temps fait-il,,,0
+342,Depuis Lille,,,0
+343,Je souhaite me rendre à Nantes depuis Marselile,Marseille,Nantes,1
+344,Aller de Dijon à Bordeaux s'il vous plaît,Dijon,Bordeaux,1
+345,Aller de Saint-Etienne à Toulon s'il vous plaît,Saint-Etienne,Toulon,1
+346,Je souhaite me rendre à Lyon depuis Nimes,Nimes,Lyon,1
+347,J'aime le train,,,0
+348,Je souhaite me rendre à Grenoble depuis Angers,Angers,Grenoble,1
+349,Je pars de Lille,,,0
+350,Aller de Toluouse à Mraseille s'il vous plaît,Toulouse,Marseille,1
+351,Je souhaite me rendre à Montpellier depuis Dijon,Dijon,Montpellier,1
+352,Salut,,,0
+353,Aller de Lille à Nimes s'il vous plaît,Lille,Nimes,1
+354,Bonjour,,,0
+355,Aller à Toulouse s'il te plaît,,,0
+356,Paris est une belle ville,,,0
+357,Bonjour,,,0
+358,Je vais à Rennes depuis Dijon,Dijon,Rennes,1
+359,Depuis Rennes,,,0
+360,Je veux un trajet de Toulouse vers Lille,Toulouse,Lille,1
+361,Je vais à Bordeaux depuis Nice,Nice,Bordeaux,1
+362,Je souhaite me rendre à Saint-Etienne depuis Grenoble,Grenoble,Saint-Etienne,1
+363,Je souhaite me rendre à Nice depuis Marseille,Marseille,Nice,1
+364,Je veux aller de Strasbourg à Bordeaux,Strasbourg,Bordeaux,1
+365,Aller de Lille à Nice s'il vous plaît,Lille,Nice,1
+366,Aller de Lille à Toulon s'il vous plaît,Lille,Toulon,1
+367,Aller à Lyon s'il te plaît,,,0
+368,Aller de Strasbourg à Nantes s'il vous plaît,Strasbourg,Nantes,1
+369,Je vais à Clermont-Ferrand depuis Toulon,Toulon,Clermont-Ferrand,1
+370,Aller à Montpellier s'il te plaît,,,0
+371,Je veux aller à Saint-Etienne,,,0
+372,Comment ça va,,,0
+373,Je veux un trajet de Rennes vers Lyon,Rennes,Lyon,1
+374,Je veux aller à Clermont-Ferrand,,,0
+375,Je vais à Saint-Etienne depuis Marseille,Marseille,Saint-Etienne,1
+376,Je souhaite me rendre à Bordeaux depuis Grenoble,Grenoble,Bordeaux,1
+377,Je veux aller de Toulosue à Clermot-Ferrand,Toulouse,Clermont-Ferrand,1
+378,Je souhaite aller de Angers à Nimes ou Nice,,,0
+379,Depuis Nimes,,,0
+380,Je vais à Grenoble depuis Paris,Paris,Grenoble,1
+381,Je souhaite aller de Strasbourg à Montpellier ou Nimes,,,0
+382,J'aime le train,,,0
+383,Je souhaite me rendre à Saint-Etienne depuis Clermont-Ferrand,Clermont-Ferrand,Saint-Etienne,1
+384,Je souhaite me rendre à Marseille depuis Nies,Nimes,Marseille,1
+385,Je veux aller de Clermont-Ferrand à Toulon,Clermont-Ferrand,Toulon,1
+386,Je veux un trajet de Dijon vers Nice,Dijon,Nice,1
+387,Aller de Lille à Reims s'il vous plaît,Lille,Reims,1
+388,Je souhaite me rendre à Toulon depuis Montpellier,Montpellier,Toulon,1
+389,Je vais à Strasbourg depuis Rennes,Rennes,Strasbourg,1
+390,J'aime le train,,,0
+391,Je vais à Dijon depuis Grenoble,Grenoble,Dijon,1
+392,Paris est une belle ville,,,0
+393,Je veux aller à Grenoble,,,0
+394,Je vais à Lyon depuis Rennes,Rennes,Lyon,1
+395,J'aime le train,,,0
+396,Aller de Dijon à Montpellier s'il vous plaît,Dijon,Montpellier,1
+397,Je souhaite me rendre à Nimes depuis Clermont-Ferrand,Clermont-Ferrand,Nimes,1
+398,Bonjour,,,0
+399,Je veux aller de Nice à Toulon,Nice,Toulon,1
+400,Je veux un trajet de Dijon vers Lille,Dijon,Lille,1
+401,Aller à Nantes s'il te plaît,,,0
+402,Aller de Toulouse à Lyon s'il vous plaît,Toulouse,Lyon,1
+403,Je souhaite me rendre à Le Havre depuis Lille,Lille,Le Havre,1
+404,Je souhaite me rendre à Toulon depuis Saint-Etienne,Saint-Etienne,Toulon,1
+405,Je souhaite aller de Nice à Nimes ou Marseille,,,0
+406,Je veux un trajet de Dijon vers Angers,Dijon,Angers,1
+407,Je vais à Reims depuis Anges,Angers,Reims,1
+408,Bonjour,,,0
+409,Quel temps fait-il,,,0
+410,Comment ça va,,,0
+411,Aller de Saint-Etienne à Le Havre s'il vous plaît,Saint-Etienne,Le Havre,1
+412,Je souhaite me rendre à Lille depuis Marseille,Marseille,Lille,1
+413,Je veux aller de Paris ou Montpellier à Saint-Etienne,,,0
+414,Je vais à Nice depuis Montpellier,Montpellier,Nice,1
+415,Quel temps fait-il,,,0
+416,Comment ça va,,,0
+417,Je vais à Reims depuis Marseille,Marseille,Reims,1
+418,Depuis Marseille,,,0
+419,Je souhaite me rendre à Clermont-Ferrand depuis Strasbourg,Strasbourg,Clermont-Ferrand,1
+420,Je veux un trajet de Clermont-Ferrand vers Grenoble,Clermont-Ferrand,Grenoble,1
+421,Je veux aller de Dijon ou Nantes à Strasbourg,,,0
+422,Je veux aller de Angers à Grenoble,Angers,Grenoble,1
+423,Je souhaite me rendre à Angers depuis Dijon,Dijon,Angers,1
+424,Je veux un trajet de Ncie vers Angers,Nice,Angers,1
+425,Je souhaite me rendre à Reims depuis Toulouse,Toulouse,Reims,1
+426,Je veux un trajet de Toulouse vers Dijon,Toulouse,Dijon,1
+427,Je vais à Saint-Etienne depuis Paris,Paris,Saint-Etienne,1
+428,Salut,,,0
+429,Aller de Grenoble à Lyon s'il vous plaît,Grenoble,Lyon,1
+430,Je souhaite aller de Bordeaux à Le Havre ou Lille,,,0
+431,Depuis Le Havre,,,0
+432,Je souhaite aller de Bordeaux à Lyon ou Dijon,,,0
+433,Je m'appelle Paul,,,0
+434,Aller de Dijon à Saint-Etienne s'il vous plaît,Dijon,Saint-Etienne,1
+435,Depuis Reims,,,0
+436,Je veux un trajet de Strasbourg vers Clermont-Ferrand,Strasbourg,Clermont-Ferrand,1
+437,Je veux un trajet de Marseille vers Toulouse,Marseille,Toulouse,1
+438,Je veux aller de Paris ou Strasbourg à Nantes,,,0
+439,Aller de Toulouse à Reims s'il vous plaît,Toulouse,Reims,1
+440,Aller à Toulouse s'il te plaît,,,0
+441,Je veux aller de Dijon à Nanets,Dijon,Nantes,1
+442,Je m'appelle Paul,,,0
+443,Je souhaite me rendre à Angers depuis Bordeaux,Bordeaux,Angers,1
+444,Je souhaite me rendre à Nimes depuis Dijon,Dijon,Nimes,1
+445,Je vais à Toulouse depuis Toulon,Toulon,Toulouse,1
+446,Je m'appelle Paul,,,0
+447,Paris est une belle ville,,,0
+448,Aller de Saint-Etienne à Lille s'il vous plaît,Saint-Etienne,Lille,1
+449,Aller à Bordeaux s'il te plaît,,,0
+450,Je veux aller de Dijon ou Le Havre à Nimes,,,0
+451,Je vais à Nantes depuis Montpellier,Montpellier,Nantes,1
+452,Je veux aller de Grenoble ou Lyon à Dijon,,,0
+453,Je veux aller de Saint-Etienne à Toulouse,Saint-Etienne,Toulouse,1
+454,J'aime le train,,,0
+455,Je veux aller de Nie à Rennes,Nice,Rennes,1
+456,Comment ça va,,,0
+457,Je vais à Dijon depuis Strasbourg,Strasbourg,Dijon,1
+458,Je vais à Grenoble depuis Dijon,Dijon,Grenoble,1
+459,Je veux aller de Toulon à Reims,Toulon,Reims,1
+460,Je m'appelle Paul,,,0
+461,Je veux aller de Grenoble ou Nice à Le Havre,,,0
+462,Comment ça va,,,0
+463,Bonjour,,,0
+464,Je veux un trajet de Nimes vers Clermont-Ferrand,Nimes,Clermont-Ferrand,1
+465,Aller de Strasbourg à Saint-Etienne s'il vous plaît,Strasbourg,Saint-Etienne,1
+466,Je veux un trajet de Nice vers Montpellier,Nice,Montpellier,1
+467,J'aime le train,,,0
+468,Je souhaite me rendre à Lille depuis Grenoble,Grenoble,Lille,1
+469,Aller de Dijon à Toulouse s'il vous plaît,Dijon,Toulouse,1
+470,Bonjour,,,0
+471,Je souhaite me rendre à Loyn depuis Strasbourg,Strasbourg,Lyon,1
+472,Je veux un trajet de Dijon vers Celrmont-Ferrand,Dijon,Clermont-Ferrand,1
+473,Je veux aller de Le Havre à Lille,Le Havre,Lille,1
+474,Aller de Strasbourg à Nantes s'il vous plaît,Strasbourg,Nantes,1
+475,Je veux aller à Saint-Etienne,,,0
+476,Aller de Saint-Etienne à Reis s'il vous plaît,Saint-Etienne,Reims,1
+477,Je souhaite aller de Toulon à Saint-Etienne ou Dijon,,,0
+478,Je veux aller de Paris à Lille,Paris,Lille,1
+479,Je veux aller de Nice à Nimes,Nice,Nimes,1
+480,Je souhaite aller de Montpellier à Toulouse ou Lyon,,,0
+481,Je pars de Toulouse,,,0
+482,Je veux aller de Nice ou Paris à Nantes,,,0
+483,Je pars de Saint-Etienne,,,0
+484,Aller de Nimes à Strasbourg s'il vous plaît,Nimes,Strasbourg,1
+485,Je veux un trajet de Dijon vers Nice,Dijon,Nice,1
+486,Je vais à Angers depuis Lyn,Lyon,Angers,1
+487,Paris est une belle ville,,,0
+488,Je souhaite aller de Grenoble à Toulon ou Strasbourg,,,0
+489,Paris est une belle ville,,,0
+490,Je veux aller de Nimes à Saint-Etienne,Nimes,Saint-Etienne,1
+491,Je veux aller de Strasbourg à Lyon,Strasbourg,Lyon,1
+492,Je vais à Saint-Etienne depuis Bordeaux,Bordeaux,Saint-Etienne,1
+493,Je vais à Reims depuis Rennes,Rennes,Reims,1
+494,Je veux un trajet de Lyon vers Lille,Lyon,Lille,1
+495,Paris est une belle ville,,,0
+496,Aller de Lyon à Gernoble s'il vous plaît,Lyon,Grenoble,1
+497,Aller de Saint-Etienne à Lyon s'il vous plaît,Saint-Etienne,Lyon,1
+498,Je souhaite aller de Montpellier à Lille ou Bordeaux,,,0
+499,Je veux aller de Toluon à Bordeaux,Toulon,Bordeaux,1
+500,Aller de Strasbourg à Toulon s'il vous plaît,Strasbourg,Toulon,1
