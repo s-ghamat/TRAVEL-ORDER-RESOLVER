@@ -44,31 +44,27 @@ CITIES_NORM = {_norm(c): c for c in CITIES}  # normalized -> canonical
 
 
 # -----------------------------
-# Matching helper
+# Matching helper (Step 5.1)
 # -----------------------------
 
-def _best_city_match(fragment: str, score_cutoff: int = 90) -> Optional[str]:
+def _best_city_match(fragment: str, score_cutoff: int = 85) -> Optional[str]:
     """
-    Match a fragment of text to a city (canonical name) using:
-    1) exact normalized match
-    2) ambiguity check (multiple cities inside same fragment)
-    3) fuzzy match (RapidFuzz)
+    Robust city matching with controlled typo tolerance.
+
+    - Rejects very short fragments
+    - Rejects ambiguity (multiple cities in one fragment)
+    - Allows fuzzy matches with safety checks to avoid false positives
     """
     if not CITIES:
         return None
 
     frag_n = _norm(fragment)
-    if not frag_n:
+    if not frag_n or len(frag_n) < 3:
         return None
 
-    # 1) Exact/near-exact normalized match
-    if frag_n in CITIES_NORM:
-        return CITIES_NORM[frag_n]
-
-    # 2) Ambiguity check: if the fragment contains multiple city names, reject
+    # Containment check (also detects ambiguity)
     contained = []
     for city_norm, city_can in CITIES_NORM.items():
-        # simple containment test on normalized strings
         if city_norm and city_norm in frag_n:
             contained.append(city_can)
 
@@ -77,7 +73,7 @@ def _best_city_match(fragment: str, score_cutoff: int = 90) -> Optional[str]:
     if len(contained) == 1:
         return contained[0]
 
-    # 3) Fuzzy match against normalized city names
+    # Fuzzy match against normalized city names
     choices = list(CITIES_NORM.keys())
     match = process.extractOne(
         frag_n,
@@ -89,6 +85,11 @@ def _best_city_match(fragment: str, score_cutoff: int = 90) -> Optional[str]:
         return None
 
     best_norm, _score, _idx = match
+
+    # Safety: avoid matching very different-length strings
+    if abs(len(best_norm) - len(frag_n)) > 4:
+        return None
+
     return CITIES_NORM[best_norm]
 
 
@@ -104,9 +105,15 @@ _PATTERNS = [
     # "de X vers Y"
     re.compile(r"\bde\s+(?P<dep>.+?)\s+vers\s+(?P<dest>.+?)\b", re.IGNORECASE),
     # "aller à Y depuis X"
-    re.compile(r"\b(?:aller|vais|va|allons|allez)\s+(?:a|à)\s+(?P<dest>.+?)\s+depuis\s+(?P<dep>.+?)\b", re.IGNORECASE),
+    re.compile(
+        r"\b(?:aller|vais|va|allons|allez)\s+(?:a|à)\s+(?P<dest>.+?)\s+depuis\s+(?P<dep>.+?)\b",
+        re.IGNORECASE,
+    ),
     # "me rendre à Y depuis X"
-    re.compile(r"\b(?:me\s+rendre|rendre)\s+(?:a|à)\s+(?P<dest>.+?)\s+depuis\s+(?P<dep>.+?)\b", re.IGNORECASE),
+    re.compile(
+        r"\b(?:me\s+rendre|rendre)\s+(?:a|à)\s+(?P<dest>.+?)\s+depuis\s+(?P<dep>.+?)\b",
+        re.IGNORECASE,
+    ),
 ]
 
 # Step 3: travel keyword filter to quickly reject trash texts
