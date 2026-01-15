@@ -1,15 +1,19 @@
 from __future__ import annotations
-
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, Dict, Any, Tuple
+from typing import Optional, Dict, Any, Tuple, List
 import sys
-
+import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SRC_DIR = PROJECT_ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
+
+from api.stations import load_stations, station_candidates_for_city, Station
+
+
+STATIONS_CSV = PROJECT_ROOT / "data" / "sncf_clean" / "stations_clean.csv"
 
 
 @dataclass
@@ -18,15 +22,23 @@ class ResolveResult:
     departure: Optional[str] = None
     arrival: Optional[str] = None
     confidence: float = 0.0
+    departure_candidates: Optional[List[Station]] = None
+    arrival_candidates: Optional[List[Station]] = None
+
     debug: Optional[Dict[str, Any]] = None
 
 
+_STATIONS_DF: Optional[pd.DataFrame] = None
+
+
+def _get_stations_df() -> pd.DataFrame:
+    global _STATIONS_DF
+    if _STATIONS_DF is None:
+        _STATIONS_DF = load_stations(STATIONS_CSV)
+    return _STATIONS_DF
+
+
 def _basic_confidence(sentence: str, dep: str, arr: str) -> Tuple[float, Dict[str, Any]]:
-    """
-    Simple confidence heuristic (deterministic, explainable):
-    - High if both city names are literally present in the sentence (normalized)
-    - Medium otherwise (still valid via fuzzy match inside parse_order)
-    """
     s = (sentence or "").lower()
     dep_l = (dep or "").lower()
     arr_l = (arr or "").lower()
@@ -34,13 +46,12 @@ def _basic_confidence(sentence: str, dep: str, arr: str) -> Tuple[float, Dict[st
     dep_in = dep_l in s
     arr_in = arr_l in s
 
-    # Heuristic scoring
     if dep_in and arr_in:
         conf = 0.92
     elif dep_in or arr_in:
         conf = 0.82
     else:
-        conf = 0.75  
+        conf = 0.75
 
     dbg = {
         "confidence_heuristic": "literal_presence",
@@ -51,23 +62,13 @@ def _basic_confidence(sentence: str, dep: str, arr: str) -> Tuple[float, Dict[st
 
 
 def resolve_sentence(sentence: str, mode: str = "baseline") -> ResolveResult:
-    """
-    UI/API wrapper around your existing resolver.
-
-    mode:
-      - "baseline": uses tor.nlp.parse_order (your rule-based + fuzzy)
-      - "spacy": placeholder for later (kept to match UI toggle)
-    """
     s = (sentence or "").strip()
     if not s:
-        return ResolveResult(
-            ok=False,
-            confidence=0.0,
-            debug={"reason": "empty_input", "mode": mode},
-        )
+        return ResolveResult(ok=False, confidence=0.0, debug={"reason": "empty_input", "mode": mode})
+
     if mode == "baseline":
         try:
-            from tor.nlp import parse_order  
+            from tor.nlp import parse_order
         except Exception as e:
             return ResolveResult(
                 ok=False,
@@ -76,50 +77,50 @@ def resolve_sentence(sentence: str, mode: str = "baseline") -> ResolveResult:
                     "reason": "import_error",
                     "mode": mode,
                     "details": repr(e),
-                    "hint": "Check that src/tor exists and that Streamlit is run from project root.",
                     "src_dir": str(SRC_DIR),
                 },
             )
-
         result = parse_order(s)
-
         if result is None:
             return ResolveResult(
                 ok=False,
                 confidence=0.15,
-                debug={
-                    "reason": "invalid_or_ambiguous",
-                    "mode": mode,
-                    "resolver": "tor.nlp.parse_order",
-                },
+                debug={"reason": "invalid_or_ambiguous", "mode": mode, "resolver": "tor.nlp.parse_order"},
             )
 
         dep, arr = result
         conf, conf_dbg = _basic_confidence(s, dep, arr)
+        stations_df = _get_stations_df()
+        dep_cands = station_candidates_for_city(stations_df, dep)
+        arr_cands = station_candidates_for_city(stations_df, arr)
+        ambiguity_penalty = 0.0
+        if len(dep_cands) >= 6:
+            ambiguity_penalty += 0.07
+        if len(arr_cands) >= 6:
+            ambiguity_penalty += 0.07
+        conf = max(0.0, conf - ambiguity_penalty)
 
         return ResolveResult(
             ok=True,
             departure=dep,
             arrival=arr,
             confidence=conf,
+            departure_candidates=dep_cands,
+            arrival_candidates=arr_cands,
             debug={
                 "mode": mode,
                 "resolver": "tor.nlp.parse_order",
                 **conf_dbg,
+                "departure_candidates_count": len(dep_cands),
+                "arrival_candidates_count": len(arr_cands),
+                "ambiguity_penalty": ambiguity_penalty,
             },
         )
     if mode == "spacy":
         return ResolveResult(
             ok=False,
             confidence=0.0,
-            debug={
-                "reason": "spacy_mode_not_connected_yet",
-                "mode": mode,
-                "todo": "Plug spaCy STATION NER + disambiguation into resolver_service.resolve_sentence()",
-            },
+            debug={"reason": "spacy_mode_not_connected_yet", "mode": mode},
         )
-    return ResolveResult(
-        ok=False,
-        confidence=0.0,
-        debug={"reason": "unknown_mode", "mode": mode},
-    )
+
+    return ResolveResult(ok=False, confidence=0.0, debug={"reason": "unknown_mode", "mode": mode})
