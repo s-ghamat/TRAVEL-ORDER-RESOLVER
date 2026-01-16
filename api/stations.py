@@ -108,3 +108,50 @@ def find_station_by_uic(stations_df: pd.DataFrame, uic_code: str) -> Optional[St
         latitude=float(r["latitude"]),
         longitude=float(r["longitude"]),
     )
+
+
+def station_candidates_from_free_text(
+    stations_df: pd.DataFrame,
+    text: str,
+    limit: int = 12,
+) -> List[Station]:
+    """
+    Helpful-mode fallback:
+    - If NLP failed (INVALID), try to propose likely stations from the raw text.
+    Explainable strategy:
+      - tokenize text
+      - find stations whose normalized name contains any token >= 4 chars
+      - rank by number of token hits + shorter name
+    """
+    t = _normalize(text)
+    if not t:
+        return []
+
+    tokens = [tok for tok in t.split() if len(tok) >= 4]
+    if not tokens:
+        return []
+
+    sub = stations_df.copy()
+    # count token hits
+    def hit_count(name_norm: str) -> int:
+        return sum(1 for tok in tokens if tok in name_norm)
+
+    sub["hits"] = sub["station_norm"].map(hit_count)
+    sub = sub[sub["hits"] > 0].copy()
+    if sub.empty:
+        return []
+
+    sub["name_len"] = sub["station_norm"].str.len()
+    sub = sub.sort_values(["hits", "name_len", "station_name"], ascending=[False, True, True]).head(limit)
+
+    out: List[Station] = []
+    for _, r in sub.iterrows():
+        out.append(
+            Station(
+                station_name=str(r["station_name"]),
+                uic_code=str(r["uic_code"]),
+                latitude=float(r["latitude"]),
+                longitude=float(r["longitude"]),
+            )
+        )
+    return out
