@@ -13,157 +13,212 @@ from api.stations import Station
 from api.pathfinder import build_itinerary
 
 
-def _station_label(sta: Station) -> str:
+def station_label(sta: Station) -> str:
     return f"{sta.station_name} (UIC: {sta.uic_code})"
 
 
-st.set_page_config(page_title="Travel Order Resolver", page_icon="🚄", layout="wide")
+# ------------------------------------------------------------
+# Page config
+# ------------------------------------------------------------
+st.set_page_config(
+    page_title="Travel Order Resolver",
+    page_icon="🚄",
+    layout="wide",
+)
 
-st.title("🚄 Travel Order Resolver — Helpful + Itinerary")
-st.caption("NLP Départ/Arrivée + désambiguïsation gares + itinéraire multi-étapes + carte")
+st.title("🚄 Travel Order Resolver")
+st.caption(
+    "Résolution d’ordres de voyage en français · NLP + données SNCF · projet universitaire"
+)
 
-left, right = st.columns([2, 1], gap="large")
+# ------------------------------------------------------------
+# Sidebar (global controls)
+# ------------------------------------------------------------
+with st.sidebar:
+    st.header("⚙️ Paramètres")
 
-with right:
-    st.subheader("Mode")
-    helpful_mode = st.toggle("Helpful mode (proposer des choix au lieu de INVALID)", value=True)
-    show_debug = st.toggle("Afficher le debug", value=True)
-
-    st.subheader("Étapes (optionnel)")
-    st.caption("Ajoute des gares intermédiaires manuellement (UI différente des autres).")
-    via_text = st.text_input("Via (séparées par des virgules)", value="", placeholder="Ex: Dijon, Lyon Part-Dieu")
-
-with left:
-    sentence = st.text_input(
-        "Phrase utilisateur",
-        value="Je veux aller de Paris à Lyon",
-        placeholder="Ex: Je voudrais partir de Bordeaux vers Marseille",
+    mode = st.radio(
+        "Résolveur NLP",
+        ["baseline", "spacy"],
+        help="Baseline = règles + fuzzy · spaCy = NER (EntityRuler)",
     )
-    mode = st.radio("Résolveur", ["baseline", "spacy"], horizontal=True)
 
-    if st.button("Résoudre", type="primary"):
-        res = resolve_sentence(sentence, mode=mode, helpful=helpful_mode)
+    helpful_mode = st.toggle(
+        "Helpful mode",
+        value=True,
+        help="Proposer des choix interactifs au lieu de retourner INVALID",
+    )
 
-        # ----------------------------
-        # Case A: NLP success
-        # ----------------------------
-        if res.ok:
-            st.success("Extraction réussie ✅")
+    show_debug = st.toggle(
+        "Afficher debug détaillé",
+        value=False,
+    )
 
-            c1, c2, c3 = st.columns(3)
-            c1.metric("Ville départ", res.departure or "—")
-            c2.metric("Ville arrivée", res.arrival or "—")
-            c3.metric("Confiance", f"{res.confidence * 100:.1f}%")
+    st.divider()
+    st.markdown(
+        """
+**Logique de l’interface**
+1. Compréhension NLP  
+2. Désambiguïsation des gares  
+3. Itinéraire + carte  
+"""
+    )
 
-            st.divider()
-            st.subheader("Choix des gares")
+# ------------------------------------------------------------
+# Main input
+# ------------------------------------------------------------
+sentence = st.text_input(
+    "📝 Phrase utilisateur",
+    value="Je voudrais aller de Paris à Lyon demain",
+    placeholder="Ex: Je veux aller de Lille à Nice",
+)
 
-            dep_candidates = res.departure_candidates or []
-            arr_candidates = res.arrival_candidates or []
+if st.button("🔍 Résoudre la demande", type="primary"):
+    res = resolve_sentence(sentence, mode=mode, helpful=helpful_mode)
 
-            # Departure station
-            dep_choice = None
-            if len(dep_candidates) == 0:
-                st.warning("Aucune gare trouvée pour le départ (dataset).")
-            elif len(dep_candidates) == 1:
-                dep_choice = dep_candidates[0]
-                st.info(f"Départ: {dep_choice.station_name}")
-            else:
-                dep_choice = st.selectbox("Gare de départ", dep_candidates, format_func=_station_label, index=0)
+    # ============================================================
+    # STEP 1 — NLP 
+    # ============================================================
+    st.subheader("① Compréhension NLP")
 
-            # Arrival station
-            arr_choice = None
-            if len(arr_candidates) == 0:
-                st.warning("Aucune gare trouvée pour l’arrivée (dataset).")
-            elif len(arr_candidates) == 1:
-                arr_choice = arr_candidates[0]
-                st.info(f"Arrivée: {arr_choice.station_name}")
-            else:
-                arr_choice = st.selectbox("Gare d’arrivée", arr_candidates, format_func=_station_label, index=0)
+    if not res.ok and not res.followup_question:
+        st.error("❌ La demande n’a pas pu être comprise.")
+        if show_debug:
+            st.json(res.debug or {})
+        st.stop()
 
-            # Parse "via" as free text 
-            via_list: list[Station] = []
-            if via_text.strip():
-                from api.stations import load_stations, station_candidates_from_free_text
+    if res.ok:
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Ville départ", res.departure)
+        col2.metric("Ville arrivée", res.arrival)
+        col3.metric("Confiance", f"{res.confidence * 100:.1f}%")
 
-                stations_df = load_stations(PROJECT_ROOT / "data" / "sncf_clean" / "stations_clean.csv")
-                for chunk in [c.strip() for c in via_text.split(",") if c.strip()]:
-                    cands = station_candidates_from_free_text(stations_df, chunk, limit=5)
-                    if cands:
-                        via_list.append(cands[0])
+        with st.expander("🧠 Détails de raisonnement (timeline NLP)", expanded=True):
+            st.markdown(
+                f"""
+- **Résolveur utilisé** : `{res.debug.get('resolver')}`
+- **Force NLP** : `{res.debug.get('confidence_strength')}`
+- **Présence littérale départ** : `{res.debug.get('departure_literal_in_sentence')}`
+- **Présence littérale arrivée** : `{res.debug.get('arrival_literal_in_sentence')}`
+- **Nb gares départ candidates** : `{res.debug.get('departure_candidates_count')}`
+- **Nb gares arrivée candidates** : `{res.debug.get('arrival_candidates_count')}`
+- **Pénalité ambiguïté** : `{res.debug.get('ambiguity_penalty')}`
+- **Pénalité contamination** : `{res.debug.get('contamination_penalty')}`
+"""
+            )
 
-            if dep_choice and arr_choice:
-                st.divider()
-                st.subheader("Itinéraire (sequence de points)")
+    else:
+        st.warning(res.followup_question)
+        st.subheader("Sélection manuelle (fallback NLP)")
 
-                steps = build_itinerary(dep_choice, arr_choice, via=via_list)
-
-                # Display steps as a table
-                rows = []
-                for i, step in enumerate(steps):
-                    rows.append(
-                        {
-                            "#": i,
-                            "Type": step.label,
-                            "Gare": step.station.station_name,
-                            "UIC": step.station.uic_code,
-                            "Distance depuis précédent (km)": round(step.distance_km_from_prev, 1),
-                        }
-                    )
-                st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-
-                # Map
-                st.subheader("Carte (aperçu)")
-                pts = [{"name": r["Type"], "latitude": step.station.latitude, "longitude": step.station.longitude} for step, r in zip(steps, rows)]
-                st.map(pd.DataFrame(pts))
-
+        cands = res.proposed_candidates or []
+        if not cands:
+            st.info("Aucune suggestion trouvée.")
             if show_debug:
-                st.subheader("Debug")
                 st.json(res.debug or {})
+            st.stop()
 
-        # ----------------------------
-        # Case B: NLP failed
-        # ----------------------------
+        dep_choice = st.selectbox("Gare de départ", cands, format_func=station_label)
+        arr_choice = st.selectbox("Gare d’arrivée", cands, format_func=station_label)
+
+        steps = build_itinerary(dep_choice, arr_choice)
+        st.success("Itinéraire construit à partir de la sélection manuelle.")
+
+        df = pd.DataFrame(
+            [
+                {
+                    "Étape": step.label,
+                    "Gare": step.station.station_name,
+                    "Distance depuis précédent (km)": round(step.distance_km_from_prev, 1),
+                }
+                for step in steps
+            ]
+        )
+        st.dataframe(df, use_container_width=True, hide_index=True)
+
+        st.map(
+            pd.DataFrame(
+                [
+                    {
+                        "latitude": step.station.latitude,
+                        "longitude": step.station.longitude,
+                    }
+                    for step in steps
+                ]
+            )
+        )
+
+        if show_debug:
+            st.json(res.debug or {})
+        st.stop()
+
+    # ============================================================
+    # STEP 2 — Station disambiguation
+    # ============================================================
+    st.subheader("② Désambiguïsation des gares SNCF")
+
+    dep_candidates = res.departure_candidates or []
+    arr_candidates = res.arrival_candidates or []
+
+    col_dep, col_arr = st.columns(2)
+
+    with col_dep:
+        st.markdown("**Gare de départ**")
+        if len(dep_candidates) == 1:
+            dep_choice = dep_candidates[0]
+            st.success(dep_choice.station_name)
         else:
-            if res.followup_question:
-                st.warning(res.followup_question)
+            dep_choice = st.selectbox(
+                "Choisissez la gare de départ",
+                dep_candidates,
+                format_func=station_label,
+            )
 
-                cands = res.proposed_candidates or []
-                if not cands:
-                    st.info("Aucune suggestion trouvée. Essayez de préciser la phrase.")
-                    if show_debug:
-                        st.json(res.debug or {})
-                    st.stop()
+    with col_arr:
+        st.markdown("**Gare d’arrivée**")
+        if len(arr_candidates) == 1:
+            arr_choice = arr_candidates[0]
+            st.success(arr_choice.station_name)
+        else:
+            arr_choice = st.selectbox(
+                "Choisissez la gare d’arrivée",
+                arr_candidates,
+                format_func=station_label,
+            )
 
-                # Two pickers: user selects departure and arrival station directly
-                st.subheader("Sélection manuelle (fallback)")
-                dep_pick = st.selectbox("Départ (gare)", cands, format_func=_station_label, index=0)
-                arr_pick = st.selectbox("Arrivée (gare)", cands, format_func=_station_label, index=min(1, len(cands) - 1))
+    # ============================================================
+    # STEP 3 — Itinerary + map
+    # ============================================================
+    st.subheader("③ Itinéraire et visualisation")
 
-                if st.button("Construire itinéraire avec ces choix"):
-                    steps = build_itinerary(dep_pick, arr_pick, via=[])
+    steps = build_itinerary(dep_choice, arr_choice)
 
-                    rows = []
-                    for i, step in enumerate(steps):
-                        rows.append(
-                            {
-                                "#": i,
-                                "Type": step.label,
-                                "Gare": step.station.station_name,
-                                "UIC": step.station.uic_code,
-                                "Distance depuis précédent (km)": round(step.distance_km_from_prev, 1),
-                            }
-                        )
-                    st.success("Itinéraire construit ✅")
-                    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    df_steps = pd.DataFrame(
+        [
+            {
+                "#": i,
+                "Type": step.label,
+                "Gare": step.station.station_name,
+                "Distance depuis précédent (km)": round(step.distance_km_from_prev, 1),
+            }
+            for i, step in enumerate(steps)
+        ]
+    )
 
-                    st.subheader("Carte (aperçu)")
-                    pts = [{"name": r["Type"], "latitude": step.station.latitude, "longitude": step.station.longitude} for step, r in zip(steps, rows)]
-                    st.map(pd.DataFrame(pts))
+    st.dataframe(df_steps, use_container_width=True, hide_index=True)
 
-            else:
-                st.error("Demande invalide ou ambiguë ❌")
+    st.map(
+        pd.DataFrame(
+            [
+                {
+                    "latitude": step.station.latitude,
+                    "longitude": step.station.longitude,
+                }
+                for step in steps
+            ]
+        )
+    )
 
-            if show_debug:
-                st.subheader("Debug")
-                st.json(res.debug or {})
+    if show_debug:
+        st.subheader("🔎 Debug brut")
+        st.json(res.debug or {})
