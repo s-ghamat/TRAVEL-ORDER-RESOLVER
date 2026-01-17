@@ -1,151 +1,279 @@
-# C1 — Application NLP + Données (SNCF) : architecture, méthode, UI et améliorations
+# TRAVEL ORDER RESOLVER (NLP + SNCF)
 
-## Objectif
+NLP + data project: resolve French travel orders (departure/destination) and generate an itinerary using SNCF data.
 
-L’objectif est de transformer un extracteur d’ordres de voyage en français (Départ / Arrivée) en une application démontrable, tout en conservant un cœur NLP isolé et évalué. L’application doit gérer un problème réel lié aux données SNCF : **une ville ne correspond pas à une seule gare**, et les entrées utilisateur sont souvent **incomplètes ou ambiguës**.
+This repository contains:
 
----
-
-## 1) Architecture du projet (séparation claire des responsabilités)
-
-Le projet est organisé en couches :
-
-* **`src/tor/` (cœur “noté”)**
-
-  * `nlp.py` : résolveur **baseline** (règles + normalisation + fuzzy matching) qui renvoie `(departure, arrival)` ou `None` (INVALID).
-  * `spacy_resolver.py` : résolveur **spaCy NER** (EntityRuler) qui extrait des entités `CITY` à partir de `data/cities.txt`, puis déduit la paire (départ, arrivée).
-  * Cette couche reste indépendante de l’UI : elle est testable via scripts/CLI.
-
-* **`api/` (couche application / orchestration)**
-
-  * `resolver_service.py` : wrapper unifié `resolve_sentence(sentence, mode, helpful)` qui :
-
-    * appelle baseline ou spaCy,
-    * calcule un **score de confiance** (explainable),
-    * propose une **désambiguïsation** à partir des données SNCF,
-    * active un **mode “Helpful”** (fallback interactif au lieu de INVALID).
-  * `stations.py` : chargement et recherche dans `data/sncf_clean/stations_clean.csv` (gares SNCF nettoyées).
-  * `pathfinder.py` : construction d’un itinéraire en **séquence de points** (gares) et calcul de distance (Haversine) entre étapes.
-
-* **`ui/` (démonstrateur Streamlit)**
-
-  * `ui/app.py` : interface utilisateur (texte → extraction → sélection gares → carte → itinéraire).
-
-Cette structure répond à l’exigence “garder le NLP isolé” : le cœur NLP peut être évalué indépendamment, et l’application n’est qu’une couche au-dessus.
+* an isolated **NLP module** (baseline rule-based + spaCy NER approach)
+* a **station disambiguation layer** using SNCF “Gares de voyageurs”
+* a **schedule-based pathfinder** using SNCF **GTFS** theoretical timetables
+* (optional demo) a Streamlit UI
 
 ---
 
-## 2) Données SNCF et motivation “ville ≠ gare”
+## 1) Project goals
 
-Les données SNCF “Gares de voyageurs” ont été nettoyées et normalisées pour produire un fichier exploitable :
+Given text commands like:
 
-* `data/sncf_clean/stations_clean.csv`
-* Colonnes : `station_name`, `uic_code`, `latitude`, `longitude` (et trigram selon nettoyage)
+* `S42,Je voudrais aller de Paris à Lyon demain`
 
-Ce dataset met en évidence un problème réel :
+The system:
 
-* une requête comme **“Lyon”** renvoie plusieurs gares : *Lyon Part-Dieu, Lyon Perrache, Lyon Vaise, …*
-* certaines chaînes (“Gare de Lyon”) peuvent introduire des confusions lexicales (ex: *Paris Gare de Lyon*).
+1. extracts origin/destination (city-level)
+2. distinguishes valid vs invalid orders
+3. finds a route using SNCF schedules (GTFS)
+4. outputs:
 
-L’application traite explicitement cette ambiguïté via la **désambiguïsation station-level**.
-
----
-
-## 3) Résolution NLP : deux approches + mode Helpful
-
-### 3.1 Baseline (règles)
-
-* Détection de patrons (“de X à Y”, “depuis X vers Y”, etc.)
-* Normalisation (casse, ponctuation, accents)
-* Fuzzy matching contrôlé pour corriger des fautes (ex: Parys → Paris)
-* Rejet des cas incomplets/ambiguës → `INVALID`
-
-### 3.2 Approche spaCy NER (EntityRuler)
-
-* Pipeline spaCy léger `spacy.blank("fr")`
-* `EntityRuler` avec patterns issus de `data/cities.txt`
-* Extraction des villes (label `CITY`) puis heuristique sur l’ordre (ex: “de X à Y”)
-
-### 3.3 “Helpful mode”
-
-Différence majeure vs un système qui retourne seulement INVALID :
-
-* Si le NLP ne produit pas de paire (départ/arrivée), le système propose un **fallback** :
-
-  * extraction de **candidats de gares** depuis le texte brut (token hits)
-  * question de clarification : l’utilisateur choisit départ/arrivée parmi les suggestions
-* Résultat : l’application “récupère” des requêtes imparfaites au lieu d’échouer.
+   * a strict **route line** (spec format)
+   * a second line with **schedule proof** (times + trip_id)
 
 ---
 
-## 4) Désambiguïsation : sélection de gares SNCF (feature différenciante)
+## 2) Repository structure (high-level)
 
-Après extraction de villes (Paris / Lyon), l’application calcule des **candidats de gares** via `stations_clean.csv` :
+* `src/tor/`
 
-* substring word-boundary match + ranking (gare, hubs, nom canonique)
-* l’utilisateur choisit la gare exacte via dropdowns :
+  * `nlp.py` : baseline rule-based parser (regex + normalization + fuzzy matching)
+  * `spacy_resolver.py` : spaCy EntityRuler approach (cities NER)
+  * `cli.py` : NLP CLI (stdin: `sentenceID,sentence`)
+  * `pathfinder_cli.py` : minimal spec pathfinder (triplet -> route)
+  * `gtfs_pathfinder.py` : schedule engine (GTFS direct + 1-transfer)
+  * `gtfs_pathfinder_cli.py` : schedule pathfinder CLI (triplet -> route + schedule line)
+* `api/`
 
-  * exemple : “Paris” → *Gare de Lyon / Gare du Nord / Montparnasse / …*
-  * exemple : “Lyon” → *Part-Dieu / Perrache / …*
+  * `resolver_service.py` : unified resolver with confidence + helpful fallback
+  * `stations.py` : SNCF station search + candidates
+  * `pathfinder.py` : simple itinerary builder for the UI layer (stations + distances)
+* `data/`
 
-Cela rend l’application plus réaliste qu’un simple “city-to-city”.
+  * `sncf_clean/stations_clean.csv` : cleaned SNCF stations (name, UIC, lat/lon)
+  * `gtfs_sncf/` : SNCF GTFS files (stops.txt, stop_times.txt, trips.txt…)
+  * `synthetic/` : generated synthetic datasets
+* `ui/`
 
----
+  * `app.py` : Streamlit demo UI
+* `scripts/`
 
-## 5) Itinéraire : séquence de points + carte
-
-Une fois les gares choisies :
-
-* `pathfinder.build_itinerary()` retourne une **liste ordonnée de points** :
-
-  * Départ → (via optional) → Arrivée
-* calcul des distances entre étapes (Haversine)
-* affichage :
-
-  * tableau des étapes
-  * carte (Streamlit `st.map`) avec positions des gares
-
-Cette partie remplit la logique “application” même avant d’intégrer des horaires temps réel.
-
----
-
-## 6) Score de confiance (explainable) + analyse d’erreurs
-
-Le score de confiance est conçu pour être **interprétable** (utile en démonstration) :
-
-* signal de base : présence littérale des villes dans la phrase
-
-  * `both_literal / one_literal / none_literal`
-* pénalité d’ambiguïté : plus il y a de gares candidates, plus la confiance baisse
-* pénalité de contamination : si des gares candidates “contiennent” lexicalement l’autre ville (ex: “Paris …” dans liste de Lyon), la confiance baisse
-
-Exemple observé (spaCy) :
-
-* `both_literal = True`
-* `departure_candidates_count = 7`, `arrival_candidates_count = 8`
-* `ambiguity_penalty = 0.18`
-* `contamination_penalty = 0.10`
-
-Ce mécanisme explique clairement au jury pourquoi la confiance diminue dans certains cas.
+  * `run_pipeline.sh` : NLP -> minimal pathfinder
+  * `run_pipeline_with_schedules.sh` : NLP -> GTFS schedule pathfinder
+  * `generate_synthetic_dataset.py` : synthetic dataset generator
+  * `benchmark_on_synthetic.py` : benchmark runner (OK vs INVALID)
 
 ---
 
-## 7) Ce qui différencie l’application (UI/UX)
+## 3) Requirements
 
-Contrairement à une UI “texte → résultat final” standard, l’UX est orientée **résolution progressive** :
-
-1. extraction villes + score + debug
-2. désambiguïsation gare-level (choix explicite)
-3. itinéraire en étapes + carte
-4. mode Helpful : questions + sélection en cas d’échec NLP
-
-Ainsi l’application traite un problème SNCF concret : **la granularité station** et l’ambiguïté.
+* macOS / Linux
+* Python 3.10+ recommended
+* A virtual environment (required)
 
 ---
 
-## 8) Pistes d’amélioration (facultatif)
+## 4) Setup
 
-* Intégrer une API horaires SNCF / Navitia pour afficher les prochains trains entre gares choisies
-* Étendre les patterns spaCy (stations directement, pas seulement villes)
-* Ajouter une gestion explicite des “via” dans le parsing NLP (ex: “en passant par Dijon”)
-* Caching des résultats station search et optimisation du ranking
+### 4.1 Create & activate venv
+
+From project root:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+```
+
+### 4.2 Install dependencies
+
+If you have `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+If not, install the minimal set:
+
+```bash
+pip install pandas streamlit spacy rapidfuzz
+```
+
+(If you use additional packages, add them to `requirements.txt`.)
+
+---
+
+## 5) Data setup
+
+### 5.1 SNCF stations (already cleaned in this project)
+
+This project expects:
+
+```
+data/sncf_clean/stations_clean.csv
+```
+
+Columns:
+
+* `station_name`
+* `uic_code`
+* `latitude`
+* `longitude`
+
+### 5.2 SNCF GTFS schedules (required to satisfy “using SNCF schedules”)
+
+Download + unzip:
+
+```bash
+mkdir -p data/gtfs_sncf
+curl -L "https://eu.ftp.opendatasoft.com/sncf/plandata/Export_OpenData_SNCF_GTFS_NewTripId.zip" \
+  -o data/gtfs_sncf/sncf_gtfs.zip
+unzip -o data/gtfs_sncf/sncf_gtfs.zip -d data/gtfs_sncf
+```
+
+Sanity check:
+
+```bash
+ls data/gtfs_sncf | head
+```
+
+You should see: `stops.txt`, `stop_times.txt`, `trips.txt`, `routes.txt`, etc.
+
+---
+
+## 6) How to run (grading-friendly)
+
+### 6.1 NLP CLI only (spec format)
+
+Input: `sentenceID,sentence`
+Output: `sentenceID,Departure,Destination` or `sentenceID,INVALID`
+
+```bash
+source .venv/bin/activate
+PYTHONPATH=".:src" python -m tor.cli
+```
+
+Example:
+
+```bash
+echo "S1,Je voudrais aller de Paris à Lyon demain" | PYTHONPATH=".:src" python -m tor.cli
+```
+
+### 6.2 Minimal pathfinder CLI (spec format)
+
+Input: `sentenceID,Departure,Destination`
+Output: `sentenceID,Departure,Step1,...,Destination`
+
+```bash
+echo "S1,Paris,Lyon" | PYTHONPATH=".:src" python -m tor.pathfinder_cli
+```
+
+### 6.3 End-to-end pipeline (NLP -> minimal pathfinder)
+
+```bash
+./scripts/run_pipeline.sh < sentences.csv
+```
+
+Test:
+
+```bash
+echo "S1,Je voudrais aller de Paris à Lyon demain" | ./scripts/run_pipeline.sh
+```
+
+### 6.4 End-to-end pipeline WITH SNCF schedules (recommended)
+
+This is the final “real itinerary” pipeline using GTFS schedules.
+
+```bash
+./scripts/run_pipeline_with_schedules.sh < sentences.csv
+```
+
+Test:
+
+```bash
+echo "S42,Je voudrais aller de Paris à Lyon demain" | ./scripts/run_pipeline_with_schedules.sh
+```
+
+Expected output: **two lines**
+
+1. strict route line (spec):
+
+* `S42,Paris,Lyon`
+
+2. schedule proof line:
+
+* `S42,SCHEDULE,DIRECT,Paris,Lyon,HH:MM:SS,HH:MM:SS,<trip_id>,<from_stop_name>,<to_stop_name>`
+
+If the route requires a transfer, you may see:
+
+* `S42,Paris,<transfer>,Lyon`
+* `S42,SCHEDULE,1_TRANSFER,...`
+
+---
+
+## 7) Streamlit demo UI (optional)
+
+```bash
+source .venv/bin/activate
+streamlit run ui/app.py
+```
+
+The UI shows:
+
+* resolution steps (NLP -> station disambiguation -> route)
+* a confidence score + explainability timeline
+* a map
+
+---
+
+## 8) Synthetic dataset generation + benchmark
+
+### 8.1 Generate a 10k dataset (sentenceID,sentence)
+
+```bash
+source .venv/bin/activate
+python scripts/generate_synthetic_dataset.py --n 10000 --invalid-ratio 0.25
+```
+
+Outputs:
+
+* `data/synthetic/synthetic_10k.csv`
+
+### 8.2 Benchmark “OK vs INVALID” rate
+
+Because `api/` is at project root and `tor/` is under `src/`, use:
+
+```bash
+PYTHONPATH=".:src" python scripts/benchmark_on_synthetic.py --mode baseline --in data/synthetic/synthetic_10k.csv
+PYTHONPATH=".:src" python scripts/benchmark_on_synthetic.py --mode spacy --in data/synthetic/synthetic_10k.csv
+```
+
+---
+
+## 9) Notes / troubleshooting
+
+### “ModuleNotFoundError: No module named 'tor'”
+
+Run with:
+
+```bash
+PYTHONPATH=".:src" python -m tor.cli
+```
+
+### “ModuleNotFoundError: No module named 'api'”
+
+Same fix:
+
+```bash
+PYTHONPATH=".:src" python scripts/benchmark_on_synthetic.py ...
+```
+
+### Performance
+
+GTFS `stop_times.txt` can be large. For faster experiments:
+
+* limit to a subset of stops/trips, or
+* add caching (future improvement)
+
+---
+
+## 10) License / Credits
+
+* SNCF Open Data (stations + GTFS schedules)
+* spaCy (French pipeline + EntityRuler)
