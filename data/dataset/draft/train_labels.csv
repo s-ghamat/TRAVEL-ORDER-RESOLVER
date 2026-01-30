@@ -1,0 +1,81 @@
+id,origin,destination,is_valid
+27,,,false
+25,Labouheyre,Ossès,true
+94,Muhlbach,Sèvres,true
+74,Aubigny,L'herbergement,true
+41,Bourbourg,Saverne,true
+69,Montreuil,,false
+56,,,false
+77,Cergy saint,Escaudœuvres,true
+1,Assat,Ebersheim,true
+54,Moreuil,La,true
+83,Avenay,Rivarennes,true
+37,Graffenwald,Brazey,true
+39,Les versannes,,false
+40,,,false
+4,Boulazac,,false
+33,Elbeuf,,false
+45,Champbenoist,Gazinet cestas,true
+70,Le coudray,Cazères,true
+58,Auvers,Ingrandes,true
+42,Beuvry lès béthune,Béthune,true
+6,Flers,Le bruel,true
+24,Golfe juan vallauris,Isles,true
+71,,,false
+2,Goncelin,Cercy,true
+81,Dannemarie,Saint-Nabord,true
+80,Mouy,Thuès carença,true
+31,,,false
+34,Langeais,Négrondes,true
+32,Mauves,Boussy,true
+10,Montoir,Thiers,true
+20,Toury,Étampes,true
+19,,Barentin,false
+3,Saint-Blaise,Montpon,true
+29,La,La pomme,true
+5,Villaines,Fougeré,true
+17,Domblans,Valence,true
+8,Remiremont,Chanac,true
+38,Chindrieux,Franois,true
+7,Ballancourt,Port boulet,true
+84,Saint-Cyprien,Thionville,true
+65,Anor,Jeumont,true
+36,,,false
+76,École,Drusenheim,true
+64,Volvic,,false
+9,Ambazac,Fleurville,true
+67,Saint-Ouen,Wilwisheim,true
+15,Gap,Coudekerque,true
+43,Le creusot,Épanvilliers,true
+50,Saint-Victor,Port boulet,true
+46,Méricourt,Saint-Martory,true
+13,Longjumeau,Tonneins,true
+49,Avignonet,,false
+88,Le creusot,Jonchery,true
+96,Langeais,Le vieux briollay,true
+26,,,false
+60,Cordes,Niversac,true
+62,,,false
+21,Torfou,Réaumont,true
+89,Les vallées,Senozan,true
+98,Toul,,false
+30,Langogne,,false
+79,Longueil,Duttlenheim,true
+18,Belleville,Vannes,true
+53,Thenissey,Vélines,true
+57,,Salomé,false
+92,,,false
+87,L'isle,Ludres,true
+59,Cosne,Imphy,true
+23,Nointel,Serres,true
+47,,,false
+95,La frayère,,false
+44,Illiers,Chenonceaux,true
+97,,Vesoul,false
+11,Beuvrages,Sin,true
+68,Hoelschloch,,false
+55,Riom,,false
+51,Fougeré,Maurecourt,true
+63,Saint-Sulpice,Magalas,true
+91,Trith,Trémolat,true
+52,La bassée,Orange,true

@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Modèles entraînés (volumineux)
+models/spacy/*/model/
+models/camembert/*/model/
+*.pkl
+*.h5
+*.pt
+*.pth
+
+# Données générées (trop volumineuses pour git)
+data/dataset/full/*.jsonl
+data/dataset/full/*.csv
+data/dataset/full/sentences_raw.txt
+data/dataset/full/annotations.json
+
+# Fichiers temporaires/convertis
+pdf-to-jpg/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environnements
+.env
+.venv

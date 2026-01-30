@@ -1,0 +1,41 @@
+{
+  "total_phrases": 20,
+  "origin_metrics": {
+    "label": "ORIGIN",
+    "TP": 11,
+    "FP": 3,
+    "FN": 6,
+    "precision": 0.7857142857142857,
+    "recall": 0.6470588235294118,
+    "f1_score": 0.7096774193548386
+  },
+  "destination_metrics": {
+    "label": "DESTINATION",
+    "TP": 13,
+    "FP": 1,
+    "FN": 3,
+    "precision": 0.9285714285714286,
+    "recall": 0.8125,
+    "f1_score": 0.8666666666666666
+  },
+  "exact_match_rate": 0.7,
+  "valid_invalid_detection": {
+    "valid_detection_rate": 0.875,
+    "invalid_detection_rate": 1.0,
+    "total_valid": 16,
+    "total_invalid": 4,
+    "correct_valid": 14,
+    "correct_invalid": 4
+  },
+  "summary": {
+    "origin_precision": 0.7857142857142857,
+    "origin_recall": 0.6470588235294118,
+    "origin_f1": 0.7096774193548386,
+    "destination_precision": 0.9285714285714286,
+    "destination_recall": 0.8125,
+    "destination_f1": 0.8666666666666666,
+    "exact_match": 0.7,
+    "valid_detection_rate": 0.875,
+    "invalid_detection_rate": 1.0
+  }
+}

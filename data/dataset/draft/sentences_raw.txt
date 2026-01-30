@@ -1,0 +1,100 @@
+1,Peut-on réserver un billet de assat à ebersheim ?
+2,Je eUX me rENdrE à ceRcy DEpuIs GoNCELin
+3,eST-CE QuE JE PeuX rÉsERvEr UN BilleT de saInt-bLAise À mOntpOn ?
+4,j'AI BesoIn DE quITTEr boULAZaC
+5,Je souhaite aller de villaines à fougeré
+6,je SoUhaITE ALLeR dE fLErs À Le Bruel POUR vOiR PierRE
+7,Je veux aller de Ballancourt à Port-Boulet
+8,il me faut aller de remiremont à chanac pour assister à un concert
+9,jE VOudRAIS Aller De amBazAC À fLEURVillE AVec cORREspONdaNcE
+10,depuis la gare de montoir je voudrais aller à thiers
+11,À quelle heure y a-t-il des trains de beuvrages à sin ?
+12,Il me faut un billet de amilly ouerray à sarrance pour demain
+13,j'aIMeRAIs Aller de loNGJumeAU À ToNNeins pOuR LES VaCAnceS
+14,quelle distance de bréval à bischheim ?
+15,Je veux me rendre de gap à coudekerque
+16,J'ai BeSOiN d'uN billet De MuLlERhOf à rOsULT poUr DeMaIN
+17,avec marie, je souhaite aller de domblans à valence d'agen
+18,EN pARtanT dE BeLlEViLLE Je VOUDrAIS mE rENdrE à VaNNeS
+19,j'ai besoin d'être à barentin ce soir
+20,Je veux aller au port de toury depuis saint-marin d'étampes
+21,Je voudrais aller de Torfou à Réaumont pour les vacances
+22,je voudrais aller à La chaize en partant de Maintenon
+23,j'aimerais aller de nointel à serres en train
+24,Je dois me rendre de golfe juan vallauris à isles
+25,à partir de Labouheyre je dois aller à Ossès
+26,Au revoir
+27,MErCI bEAUcOUp
+28,il me faut un billet de charleville à toury
+29,je veux La ménitré depuis La pomme
+30,Quels sont les trains depuis langogne ?
+31,PouVEz-vOUs M'AiDER ?
+32,Quels sont les horaires de Mauves à Boussy ?
+33,Y a-t-il un train direct depuis Elbeuf ?
+34,Je SouhAITE aLLer DE LaNgeaIS À nÉGroNDeS aU meillEur pRiX
+35,je voudrais aller de chabris à istres avec mon ami pierre
+36,Bonjour, comment allez-vous ?
+37,je voudrais aller chercher françois à brazey depuis graffenwald
+38,Peut on aller de chindrieux à franois en train ?
+39,J'aimerais un billet depuis les versannes
+40,Je veux faire le trajet pontchâteau druye
+41,Je voudrais aller de bourbourg à saverne pour une exposition
+42,Depuis beuvry lès béthune je recherche un train pour santeuil
+43,partir de Le creusot pour aller à Épanvilliers
+44,Dns quelle gare prendre le train de illiers à chenonceaux ?
+45,Je voudrais me rendre de champbenoist à gazinet cestas
+46,de Méricourt je veux aller à Saint-Martory
+47,Je cherche un restaurant
+48,il me faut me déplacer de Grisolles à Mandelieu
+49,De sant-martin pour avignonet s'il vous plaît
+50,Comment aller à Port-Boulet depuis Saint-Victor ?
+51,Je dois aller de Fougeré à Maurecourt pour une réunion
+52,Je souhaite partir de la bassée et arriver à orange
+53,Je dois aller voir mon ami Paul à Vélines en partant de Thenissey
+54,je dois aller de moreuil à la réole pour une conférence
+55,je voudrais aller de fécam à riom pour le moins cher
+56,je voudrais un billet dpuis croix l'allumette
+57,je dois aller à salomé
+58,de auvers pour ingrandes s'il vous plaît
+59,jE voUDrais aLlER de coSNe à IMpHY en PREMIÈRE ClAssE
+60,je SOuhaITE aLLer De CORdeS à niVErSaC poUR les vaCANcES
+61,À partir de lyon saint je voudrais aller à dourdan
+62,pouvez-vous me donner des directions ?
+63,j'aiMeRaIS partiR de SAINt-SuLPice Pour aler à MAgALas
+64,j'aimerais aller de bouae à volvic le plus vite possible
+65,J'aimerais me rendre à jeumont depuis anor pour un rendez-vous
+66,j'aimerais aller de morannes à meulan aujourd'hui
+67,j'AimERaIS uN bIlLet de SaINt Ouen à WIlWishEIM
+68,Est-ce qu'il y a des trains pour hoelschloch ?
+69,Est ce qu'il y a des trains de Montreuil à Les lacs ?
+70,je voudrais aller de le coudray à cazères pour un week-end
+71,CoMMEnT Ça va ?
+72,Comment me rendre à la gare de Valergues depuis Hellemmes ?
+73,je veux partir de Montville et arriver à Tourcoing
+74,Y a-t-il des réductions pour le trajet de aubigny à l'herbergement ?
+75,quel est le prochain départ de banyus à milhaud ?
+76,je voudrais u trajet de École à Drusenheim
+77,Je voudrais aller de cergy saint à escaudœuvres rapidement
+78,Est-ce qu'il y a un train direct pour Teting ?
+79,J'aimErAIs Me REndRe à DuttleNHeIM depUIs lonGUeIL
+80,J'aimerais aller voir mon ami {name} à mouy depuis thuès carença
+81,Pour aller à saint nabord je voudrais partir de dannemarie
+82,jE veUX alleR De PLeSTaN À vIF POUR vIsIter
+83,Je veux aller de Avenay à Rivarennes pour visiter
+84,Je veuX un tRaIN DIrect de SAINt cYPrIeN à tHIONviLLe
+85,Y a-t-il un train direct depuis la gouesnière ?
+86,J'aimerais prendre l train pour saint-romain
+87,JE doIS aller à lUDrEs dEPUIs l'iSLE
+88,je voudrais aller de le creusot vers jonchery
+89,à partir de Les vallées je souhaite aller à Senozan
+90,Je souhaite aller de biot à mommenheim pour les vacances
+91,je SouhAite tRiTH EN parTaNT dE TRéMolAt
+92,jE CHerche un ResTAuRAnT
+93,Je voudrais aller de marles à saint-pol pour un rendez-vous
+94,Quel temps de trajet de Muhlbach à Sèvres ?
+95,J'aimerais aller de La frayère à Saint Cyr pour visiter
+96,J'aimerais aller de Langeais à Le vieux briollay pour rendre visite à Paul
+97,Combien pour aller à Vesoul ?
+98,Je veux un billet de toul à avalon pour demain
+99,je cherche un billet de Castelnaudary à Tonneins
+100,PuIS-jE ALler dE LONguyoN À MARLes eN TraiN ?

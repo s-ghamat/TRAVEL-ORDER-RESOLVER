@@ -1,0 +1,1187 @@
+{
+  "valides_directes": [
+    {
+      "template": "je voudrais aller de {origin} à {destination}",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination}",
+        "je souhaite aller de {origin} à {destination}",
+        "je veux aller de {origin} à {destination}",
+        "je dois aller de {origin} à {destination}",
+        "il me faut aller de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais me rendre de {origin} à {destination}",
+      "variations": [
+        "j'aimerais me rendre de {origin} à {destination}",
+        "je souhaite me rendre de {origin} à {destination}",
+        "je veux me rendre de {origin} à {destination}",
+        "je dois me rendre de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais voyager de {origin} à {destination}",
+      "variations": [
+        "j'aimerais voyager de {origin} à {destination}",
+        "je souhaite voyager de {origin} à {destination}",
+        "je veux voyager de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais partir de {origin} pour aller à {destination}",
+      "variations": [
+        "j'aimerais partir de {origin} pour aller à {destination}",
+        "je souhaite partir de {origin} pour aller à {destination}",
+        "je veux partir de {origin} pour aller à {destination}",
+        "je dois partir de {origin} pour aller à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais un billet de {origin} à {destination}",
+      "variations": [
+        "j'aimerais un billet de {origin} à {destination}",
+        "je souhaite un billet de {origin} à {destination}",
+        "je veux un billet de {origin} à {destination}",
+        "il me faut un billet de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais un trajet de {origin} à {destination}",
+      "variations": [
+        "j'aimerais un trajet de {origin} à {destination}",
+        "je souhaite un trajet de {origin} à {destination}",
+        "je veux un trajet de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais aller depuis {origin} jusqu'à {destination}",
+      "variations": [
+        "j'aimerais aller depuis {origin} jusqu'à {destination}",
+        "je souhaite aller depuis {origin} jusqu'à {destination}",
+        "je veux aller depuis {origin} jusqu'à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} vers {destination}",
+      "variations": [
+        "j'aimerais aller de {origin} vers {destination}",
+        "je souhaite aller de {origin} vers {destination}",
+        "je veux aller de {origin} vers {destination}"
+      ]
+    },
+    {
+      "template": "je dois me déplacer de {origin} à {destination}",
+      "variations": [
+        "je dois me déplacer de {origin} vers {destination}",
+        "je dois me déplacer depuis {origin} jusqu'à {destination}",
+        "il me faut me déplacer de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais faire le trajet {origin} {destination}",
+      "variations": [
+        "je veux faire le trajet {origin} {destination}",
+        "j'aimerais faire le trajet {origin} {destination}",
+        "je souhaite faire le trajet {origin} {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} en train",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} en train",
+        "je souhaite aller de {origin} à {destination} en train",
+        "je veux prendre le train de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je cherche un train de {origin} à {destination}",
+      "variations": [
+        "je cherche un billet de {origin} à {destination}",
+        "je cherche un trajet de {origin} à {destination}",
+        "je recherche un train de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais réserver un billet de {origin} à {destination}",
+      "variations": [
+        "j'aimerais réserver un billet de {origin} à {destination}",
+        "je souhaite réserver un billet de {origin} à {destination}",
+        "je veux réserver un billet de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais prendre le train de {origin} à {destination}",
+      "variations": [
+        "j'aimerais prendre le train de {origin} à {destination}",
+        "je souhaite prendre le train de {origin} à {destination}",
+        "je veux prendre le train de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} demain",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} demain",
+        "je souhaite aller de {origin} à {destination} demain",
+        "je veux aller de {origin} à {destination} demain"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} aujourd'hui",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} aujourd'hui",
+        "je souhaite aller de {origin} à {destination} aujourd'hui",
+        "je veux aller de {origin} à {destination} aujourd'hui"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} ce soir",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} ce soir",
+        "je souhaite aller de {origin} à {destination} ce soir",
+        "je veux aller de {origin} à {destination} ce soir"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} le plus tôt possible",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} le plus tôt possible",
+        "je souhaite aller de {origin} à {destination} le plus tôt possible",
+        "je veux aller de {origin} à {destination} le plus tôt possible"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} rapidement",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} rapidement",
+        "je souhaite aller de {origin} à {destination} rapidement",
+        "je veux aller de {origin} à {destination} rapidement"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} sans correspondance",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} sans correspondance",
+        "je souhaite aller de {origin} à {destination} sans correspondance",
+        "je veux un train direct de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} avec correspondance",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} avec correspondance",
+        "je souhaite aller de {origin} à {destination} avec correspondance"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} en première classe",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} en première classe",
+        "je souhaite aller de {origin} à {destination} en première classe"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} en seconde classe",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} en seconde classe",
+        "je souhaite aller de {origin} à {destination} en seconde classe"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour le moins cher",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour le moins cher",
+        "je souhaite aller de {origin} à {destination} au meilleur prix"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} le plus vite possible",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} le plus vite possible",
+        "je souhaite aller de {origin} à {destination} le plus rapidement"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour un rendez-vous",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour un rendez-vous",
+        "je dois aller de {origin} à {destination} pour un rendez-vous",
+        "il me faut aller de {origin} à {destination} pour un rendez-vous"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour les vacances",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour les vacances",
+        "je souhaite aller de {origin} à {destination} pour les vacances",
+        "je veux aller de {origin} à {destination} en vacances"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour le travail",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour le travail",
+        "je dois aller de {origin} à {destination} pour le travail",
+        "il me faut aller de {origin} à {destination} pour le travail"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour voir ma famille",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour voir ma famille",
+        "je souhaite aller de {origin} à {destination} pour voir ma famille",
+        "je veux aller de {origin} à {destination} voir ma famille"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour un week-end",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour un week-end",
+        "je souhaite aller de {origin} à {destination} pour le week-end"
+      ]
+    },
+    {
+      "template": "je voudrais aller de {origin} à {destination} pour assister à un événement",
+      "variations": [
+        "j'aimerais aller de {origin} à {destination} pour assister à un événement",
+        "je dois aller de {origin} à {destination} pour assister à un événement"
+      ]
+    }
+  ],
+  "valides_interrogatives": [
+    {
+      "template": "Comment me rendre à {destination} depuis {origin} ?",
+      "variations": [
+        "Comment aller à {destination} depuis {origin} ?",
+        "Comment me rendre de {origin} à {destination} ?",
+        "Comment aller de {origin} à {destination} ?",
+        "Comment faire pour aller de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Comment aller de {origin} à {destination} ?",
+      "variations": [
+        "Comment me rendre de {origin} à {destination} ?",
+        "Comment faire de {origin} à {destination} ?",
+        "Comment se rendre de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Y a-t-il des trains de {origin} à {destination} ?",
+      "variations": [
+        "Y a-t-il un train de {origin} à {destination} ?",
+        "Est-ce qu'il y a des trains de {origin} à {destination} ?",
+        "Est-ce qu'il y a un train de {origin} à {destination} ?",
+        "Il y a-t-il des trains de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Quels sont les horaires de {origin} à {destination} ?",
+      "variations": [
+        "Quels horaires pour aller de {origin} à {destination} ?",
+        "Quels sont les trains de {origin} à {destination} ?",
+        "Quels trains y a-t-il de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "À quelle heure y a-t-il des trains de {origin} à {destination} ?",
+      "variations": [
+        "À quelle heure partent les trains de {origin} à {destination} ?",
+        "Quelle heure pour un train de {origin} à {destination} ?",
+        "Quels horaires de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Combien coûte un billet de {origin} à {destination} ?",
+      "variations": [
+        "Quel est le prix d'un billet de {origin} à {destination} ?",
+        "Quel prix pour aller de {origin} à {destination} ?",
+        "Combien pour un trajet de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Quel est le meilleur trajet de {origin} à {destination} ?",
+      "variations": [
+        "Quel est le trajet le plus rapide de {origin} à {destination} ?",
+        "Quel est le trajet le moins cher de {origin} à {destination} ?",
+        "Quel trajet recommandez-vous de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Y a-t-il un train direct de {origin} à {destination} ?",
+      "variations": [
+        "Est-ce qu'il y a un train direct de {origin} à {destination} ?",
+        "Y a-t-il des trains directs de {origin} à {destination} ?",
+        "Existe-t-il un train direct de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Combien de temps pour aller de {origin} à {destination} ?",
+      "variations": [
+        "Quelle est la durée du trajet de {origin} à {destination} ?",
+        "Combien de temps dure le trajet de {origin} à {destination} ?",
+        "Quel temps de trajet de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Où puis-je prendre un train pour aller de {origin} à {destination} ?",
+      "variations": [
+        "Où prendre le train de {origin} à {destination} ?",
+        "Quelle gare pour aller de {origin} à {destination} ?",
+        "Dans quelle gare prendre le train de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Peut-on aller de {origin} à {destination} en train ?",
+      "variations": [
+        "Est-ce possible d'aller de {origin} à {destination} en train ?",
+        "Puis-je aller de {origin} à {destination} en train ?",
+        "C'est possible d'aller de {origin} à {destination} en train ?"
+      ]
+    },
+    {
+      "template": "Quelle est la gare la plus proche de {destination} depuis {origin} ?",
+      "variations": [
+        "Quelle gare pour {destination} depuis {origin} ?",
+        "Quelle est la meilleure gare pour {destination} depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Y a-t-il des correspondances pour aller de {origin} à {destination} ?",
+      "variations": [
+        "Faut-il une correspondance pour aller de {origin} à {destination} ?",
+        "Y a-t-il des changements pour aller de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Quand part le prochain train de {origin} à {destination} ?",
+      "variations": [
+        "Quand part le prochain train de {origin} vers {destination} ?",
+        "Quel est le prochain départ de {origin} à {destination} ?",
+        "Quand est le prochain train de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Puis-je réserver un billet de {origin} à {destination} ?",
+      "variations": [
+        "Est-ce que je peux réserver un billet de {origin} à {destination} ?",
+        "Peut-on réserver un billet de {origin} à {destination} ?",
+        "Je peux réserver un billet de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Quel type de train va de {origin} à {destination} ?",
+      "variations": [
+        "Quel train pour aller de {origin} à {destination} ?",
+        "Quelle ligne de train de {origin} à {destination} ?",
+        "Quel service de train de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Y a-t-il des réductions pour le trajet de {origin} à {destination} ?",
+      "variations": [
+        "Y a-t-il des tarifs réduits de {origin} à {destination} ?",
+        "Existe-t-il des promotions pour {origin} {destination} ?"
+      ]
+    },
+    {
+      "template": "Combien de correspondances pour aller de {origin} à {destination} ?",
+      "variations": [
+        "Combien de changements pour aller de {origin} à {destination} ?",
+        "Faut-il changer de train pour aller de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Quelle est la distance entre {origin} et {destination} ?",
+      "variations": [
+        "Combien de kilomètres de {origin} à {destination} ?",
+        "Quelle distance de {origin} à {destination} ?"
+      ]
+    },
+    {
+      "template": "Puis-je emmener un vélo dans le train de {origin} à {destination} ?",
+      "variations": [
+        "Est-ce que je peux prendre mon vélo de {origin} à {destination} ?",
+        "Les vélos sont-ils acceptés de {origin} à {destination} ?"
+      ]
+    }
+  ],
+  "valides_avec_contexte": [
+    {
+      "template": "Je veux aller voir mon ami {name} à {destination} en partant de {origin}",
+      "variations": [
+        "Je voudrais aller voir mon ami {name} à {destination} en partant de {origin}",
+        "J'aimerais aller voir mon ami {name} à {destination} depuis {origin}",
+        "Je dois aller voir mon ami {name} à {destination} en partant de {origin}",
+        "Il me faut aller voir mon ami {name} à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je dois me rendre à {destination} depuis {origin} pour un rendez-vous",
+      "variations": [
+        "Je voudrais me rendre à {destination} depuis {origin} pour un rendez-vous",
+        "J'aimerais me rendre à {destination} depuis {origin} pour un rendez-vous",
+        "Il me faut me rendre à {destination} depuis {origin} pour un rendez-vous"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour les vacances",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour les vacances",
+        "Je souhaite aller de {origin} à {destination} pour les vacances",
+        "Je veux partir de {origin} à {destination} pour les vacances"
+      ]
+    },
+    {
+      "template": "Il me faut un billet de {origin} à {destination} pour demain",
+      "variations": [
+        "Je dois avoir un billet de {origin} à {destination} pour demain",
+        "J'ai besoin d'un billet de {origin} à {destination} pour demain",
+        "Je veux un billet de {origin} à {destination} pour demain"
+      ]
+    },
+    {
+      "template": "Je veux faire {origin} {destination} pour voir ma famille",
+      "variations": [
+        "Je voudrais faire {origin} {destination} pour voir ma famille",
+        "J'aimerais faire {origin} {destination} pour voir ma famille",
+        "Je dois faire {origin} {destination} pour voir ma famille"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour assister à un concert",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour assister à un concert",
+        "Je dois aller de {origin} à {destination} pour assister à un concert",
+        "Il me faut aller de {origin} à {destination} pour assister à un concert"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un mariage",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un mariage",
+        "Je dois aller de {origin} à {destination} pour un mariage",
+        "Il me faut aller de {origin} à {destination} pour un mariage"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour une réunion",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour une réunion",
+        "Je dois aller de {origin} à {destination} pour une réunion",
+        "Il me faut aller de {origin} à {destination} pour une réunion"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour visiter",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour visiter",
+        "Je souhaite aller de {origin} à {destination} pour visiter",
+        "Je veux aller de {origin} à {destination} pour visiter"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour faire du tourisme",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour faire du tourisme",
+        "Je souhaite aller de {origin} à {destination} pour faire du tourisme"
+      ]
+    },
+    {
+      "template": "Je dois aller chercher quelqu'un à {destination} depuis {origin}",
+      "variations": [
+        "Je voudrais aller chercher quelqu'un à {destination} depuis {origin}",
+        "J'aimerais aller chercher quelqu'un à {destination} depuis {origin}",
+        "Il me faut aller chercher quelqu'un à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un entretien",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un entretien",
+        "Je dois aller de {origin} à {destination} pour un entretien",
+        "Il me faut aller de {origin} à {destination} pour un entretien"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour une formation",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour une formation",
+        "Je dois aller de {origin} à {destination} pour une formation",
+        "Il me faut aller de {origin} à {destination} pour une formation"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un stage",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un stage",
+        "Je dois aller de {origin} à {destination} pour un stage"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un séminaire",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un séminaire",
+        "Je dois aller de {origin} à {destination} pour un séminaire"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour une conférence",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour une conférence",
+        "Je dois aller de {origin} à {destination} pour une conférence"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un événement sportif",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un événement sportif",
+        "Je dois aller de {origin} à {destination} pour un événement sportif"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un festival",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un festival",
+        "Je souhaite aller de {origin} à {destination} pour un festival"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour une exposition",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour une exposition",
+        "Je souhaite aller de {origin} à {destination} pour une exposition"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour un anniversaire",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour un anniversaire",
+        "Je dois aller de {origin} à {destination} pour un anniversaire"
+      ]
+    }
+  ],
+  "valides_ordre_inverse": [
+    {
+      "template": "depuis {origin} je veux aller à {destination}",
+      "variations": [
+        "depuis {origin} je voudrais aller à {destination}",
+        "depuis {origin} j'aimerais aller à {destination}",
+        "depuis {origin} je souhaite aller à {destination}",
+        "depuis {origin} je dois aller à {destination}"
+      ]
+    },
+    {
+      "template": "en partant de {origin} je voudrais me rendre à {destination}",
+      "variations": [
+        "en partant de {origin} j'aimerais me rendre à {destination}",
+        "en partant de {origin} je souhaite me rendre à {destination}",
+        "en partant de {origin} je veux me rendre à {destination}",
+        "en partant de {origin} je dois me rendre à {destination}"
+      ]
+    },
+    {
+      "template": "à partir de {origin} j'aimerais aller à {destination}",
+      "variations": [
+        "à partir de {origin} je voudrais aller à {destination}",
+        "à partir de {origin} je souhaite aller à {destination}",
+        "à partir de {origin} je veux aller à {destination}",
+        "à partir de {origin} je dois aller à {destination}"
+      ]
+    },
+    {
+      "template": "de {origin} je voudrais aller à {destination}",
+      "variations": [
+        "de {origin} j'aimerais aller à {destination}",
+        "de {origin} je souhaite aller à {destination}",
+        "de {origin} je veux aller à {destination}"
+      ]
+    },
+    {
+      "template": "partir de {origin} pour aller à {destination}",
+      "variations": [
+        "partir de {origin} pour se rendre à {destination}",
+        "partir de {origin} pour aller à {destination}",
+        "quitter {origin} pour aller à {destination}"
+      ]
+    },
+    {
+      "template": "je voudrais aller à {destination} en partant de {origin}",
+      "variations": [
+        "j'aimerais aller à {destination} en partant de {origin}",
+        "je souhaite aller à {destination} en partant de {origin}",
+        "je veux aller à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "je voudrais me rendre à {destination} depuis {origin}",
+      "variations": [
+        "j'aimerais me rendre à {destination} depuis {origin}",
+        "je souhaite me rendre à {destination} depuis {origin}",
+        "je veux me rendre à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "je dois aller à {destination} en partant de {origin}",
+      "variations": [
+        "je dois me rendre à {destination} en partant de {origin}",
+        "il me faut aller à {destination} en partant de {origin}",
+        "je dois aller à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "pour aller à {destination} je dois partir de {origin}",
+      "variations": [
+        "pour me rendre à {destination} je dois partir de {origin}",
+        "pour aller à {destination} je voudrais partir de {origin}",
+        "pour aller à {destination} j'aimerais partir de {origin}"
+      ]
+    },
+    {
+      "template": "à {destination} je voudrais aller depuis {origin}",
+      "variations": [
+        "à {destination} j'aimerais aller depuis {origin}",
+        "à {destination} je souhaite aller depuis {origin}",
+        "vers {destination} je voudrais aller depuis {origin}"
+      ]
+    },
+    {
+      "template": "je voudrais {destination} en partant de {origin}",
+      "variations": [
+        "j'aimerais {destination} en partant de {origin}",
+        "je souhaite {destination} en partant de {origin}",
+        "je veux {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "depuis {origin} je cherche un train pour {destination}",
+      "variations": [
+        "depuis {origin} je cherche un billet pour {destination}",
+        "depuis {origin} je recherche un train pour {destination}",
+        "en partant de {origin} je cherche un train pour {destination}"
+      ]
+    },
+    {
+      "template": "de {origin} vers {destination} s'il vous plaît",
+      "variations": [
+        "de {origin} à {destination} s'il vous plaît",
+        "depuis {origin} jusqu'à {destination} s'il vous plaît",
+        "de {origin} pour {destination} s'il vous plaît"
+      ]
+    },
+    {
+      "template": "je voudrais partir de {origin} et arriver à {destination}",
+      "variations": [
+        "j'aimerais partir de {origin} et arriver à {destination}",
+        "je souhaite partir de {origin} et arriver à {destination}",
+        "je veux partir de {origin} et arriver à {destination}"
+      ]
+    },
+    {
+      "template": "depuis la gare de {origin} je voudrais aller à {destination}",
+      "variations": [
+        "depuis la gare de {origin} j'aimerais aller à {destination}",
+        "depuis la gare de {origin} je souhaite aller à {destination}",
+        "depuis la gare de {origin} je veux aller à {destination}"
+      ]
+    }
+  ],
+  "invalides_sans_origine": [
+    {
+      "template": "Je voudrais aller à {destination}",
+      "variations": [
+        "J'aimerais aller à {destination}",
+        "Je souhaite aller à {destination}",
+        "Je veux aller à {destination}",
+        "Je dois aller à {destination}"
+      ]
+    },
+    {
+      "template": "Comment me rendre à {destination} ?",
+      "variations": [
+        "Comment aller à {destination} ?",
+        "Comment faire pour aller à {destination} ?",
+        "Comment se rendre à {destination} ?"
+      ]
+    },
+    {
+      "template": "Y a-t-il des trains pour {destination} ?",
+      "variations": [
+        "Y a-t-il un train pour {destination} ?",
+        "Est-ce qu'il y a des trains pour {destination} ?",
+        "Il y a-t-il des trains pour {destination} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais un billet pour {destination}",
+      "variations": [
+        "J'aimerais un billet pour {destination}",
+        "Je souhaite un billet pour {destination}",
+        "Je veux un billet pour {destination}"
+      ]
+    },
+    {
+      "template": "Quels sont les horaires pour {destination} ?",
+      "variations": [
+        "Quels horaires pour {destination} ?",
+        "Quels trains pour {destination} ?",
+        "Quels sont les trains pour {destination} ?"
+      ]
+    },
+    {
+      "template": "Je dois me rendre à {destination}",
+      "variations": [
+        "Je dois aller à {destination}",
+        "Il me faut aller à {destination}",
+        "J'ai besoin d'aller à {destination}"
+      ]
+    },
+    {
+      "template": "Je voudrais voyager jusqu'à {destination}",
+      "variations": [
+        "J'aimerais voyager jusqu'à {destination}",
+        "Je souhaite voyager jusqu'à {destination}",
+        "Je veux voyager jusqu'à {destination}"
+      ]
+    },
+    {
+      "template": "Comment aller à {destination} en train ?",
+      "variations": [
+        "Comment me rendre à {destination} en train ?",
+        "Comment faire pour aller à {destination} en train ?"
+      ]
+    },
+    {
+      "template": "Je voudrais prendre le train pour {destination}",
+      "variations": [
+        "J'aimerais prendre le train pour {destination}",
+        "Je souhaite prendre le train pour {destination}",
+        "Je veux prendre le train pour {destination}"
+      ]
+    },
+    {
+      "template": "Quel est le prix pour aller à {destination} ?",
+      "variations": [
+        "Combien coûte un billet pour {destination} ?",
+        "Quel prix pour {destination} ?",
+        "Combien pour aller à {destination} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais réserver pour {destination}",
+      "variations": [
+        "J'aimerais réserver pour {destination}",
+        "Je souhaite réserver pour {destination}",
+        "Je veux réserver pour {destination}"
+      ]
+    },
+    {
+      "template": "Y a-t-il un train direct pour {destination} ?",
+      "variations": [
+        "Est-ce qu'il y a un train direct pour {destination} ?",
+        "Existe-t-il un train direct pour {destination} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais aller à {destination} demain",
+      "variations": [
+        "J'aimerais aller à {destination} demain",
+        "Je souhaite aller à {destination} demain",
+        "Je veux aller à {destination} demain"
+      ]
+    },
+    {
+      "template": "Je dois être à {destination} ce soir",
+      "variations": [
+        "Je dois me rendre à {destination} ce soir",
+        "Il me faut être à {destination} ce soir",
+        "J'ai besoin d'être à {destination} ce soir"
+      ]
+    },
+    {
+      "template": "Quand part le prochain train pour {destination} ?",
+      "variations": [
+        "Quand part le prochain train vers {destination} ?",
+        "Quel est le prochain départ pour {destination} ?",
+        "Quand est le prochain train pour {destination} ?"
+      ]
+    }
+  ],
+  "invalides_sans_destination": [
+    {
+      "template": "Je voudrais partir de {origin}",
+      "variations": [
+        "J'aimerais partir de {origin}",
+        "Je souhaite partir de {origin}",
+        "Je veux partir de {origin}",
+        "Je dois partir de {origin}"
+      ]
+    },
+    {
+      "template": "Je dois quitter {origin}",
+      "variations": [
+        "Je dois partir de {origin}",
+        "Il me faut quitter {origin}",
+        "J'ai besoin de quitter {origin}"
+      ]
+    },
+    {
+      "template": "Comment partir de {origin} ?",
+      "variations": [
+        "Comment quitter {origin} ?",
+        "Comment faire pour partir de {origin} ?",
+        "Comment se rendre hors de {origin} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais un billet depuis {origin}",
+      "variations": [
+        "J'aimerais un billet depuis {origin}",
+        "Je souhaite un billet depuis {origin}",
+        "Je veux un billet depuis {origin}"
+      ]
+    },
+    {
+      "template": "Y a-t-il des trains depuis {origin} ?",
+      "variations": [
+        "Y a-t-il un train depuis {origin} ?",
+        "Est-ce qu'il y a des trains depuis {origin} ?",
+        "Il y a-t-il des trains depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Quels sont les horaires depuis {origin} ?",
+      "variations": [
+        "Quels horaires depuis {origin} ?",
+        "Quels trains depuis {origin} ?",
+        "Quels sont les trains depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Je dois me rendre depuis {origin}",
+      "variations": [
+        "Je dois partir de {origin}",
+        "Il me faut partir de {origin}",
+        "J'ai besoin de partir de {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais prendre le train depuis {origin}",
+      "variations": [
+        "J'aimerais prendre le train depuis {origin}",
+        "Je souhaite prendre le train depuis {origin}",
+        "Je veux prendre le train depuis {origin}"
+      ]
+    },
+    {
+      "template": "Comment aller depuis {origin} ?",
+      "variations": [
+        "Comment partir depuis {origin} ?",
+        "Comment faire pour partir depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais réserver depuis {origin}",
+      "variations": [
+        "J'aimerais réserver depuis {origin}",
+        "Je souhaite réserver depuis {origin}",
+        "Je veux réserver depuis {origin}"
+      ]
+    },
+    {
+      "template": "Y a-t-il un train direct depuis {origin} ?",
+      "variations": [
+        "Est-ce qu'il y a un train direct depuis {origin} ?",
+        "Existe-t-il un train direct depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais partir de {origin} demain",
+      "variations": [
+        "J'aimerais partir de {origin} demain",
+        "Je souhaite partir de {origin} demain",
+        "Je veux partir de {origin} demain"
+      ]
+    },
+    {
+      "template": "Je dois quitter {origin} ce soir",
+      "variations": [
+        "Je dois partir de {origin} ce soir",
+        "Il me faut quitter {origin} ce soir",
+        "J'ai besoin de quitter {origin} ce soir"
+      ]
+    },
+    {
+      "template": "Quand part le prochain train depuis {origin} ?",
+      "variations": [
+        "Quand part le prochain train de {origin} ?",
+        "Quel est le prochain départ depuis {origin} ?",
+        "Quand est le prochain train depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais aller quelque part depuis {origin}",
+      "variations": [
+        "J'aimerais aller quelque part depuis {origin}",
+        "Je souhaite aller quelque part depuis {origin}",
+        "Je veux aller quelque part depuis {origin}"
+      ]
+    }
+  ],
+  "invalides_phrases_non_liees": [
+    "Une phrase sans origine ni destination",
+    "Bonjour, comment allez-vous ?",
+    "Quel temps fait-il aujourd'hui ?",
+    "Je cherche un restaurant",
+    "Où puis-je trouver un hôtel ?",
+    "Quelle est l'heure ?",
+    "Je voudrais manger quelque chose",
+    "Comment ça va ?",
+    "Qu'est-ce que vous recommandez ?",
+    "Je ne sais pas quoi faire",
+    "Pouvez-vous m'aider ?",
+    "Merci beaucoup",
+    "Au revoir",
+    "À bientôt",
+    "Je cherche des informations",
+    "Qu'est-ce qu'il y a à voir ici ?",
+    "Je voudrais visiter la ville",
+    "Où sont les toilettes ?",
+    "Je suis perdu",
+    "Pouvez-vous me donner des directions ?"
+  ],
+  "ambiguites_prenoms": [
+    {
+      "template": "Je veux aller voir mon ami {name} à {destination} en partant de {origin}",
+      "variations": [
+        "Je voudrais aller voir mon ami {name} à {destination} en partant de {origin}",
+        "J'aimerais aller voir mon ami {name} à {destination} depuis {origin}",
+        "Je dois aller voir mon ami {name} à {destination} en partant de {origin}",
+        "Il me faut aller voir mon ami {name} à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Avec mes amis {name1} et {name2}, je voudrais aller de {origin} à {destination}",
+      "variations": [
+        "Avec mes amis {name1} et {name2}, j'aimerais aller de {origin} à {destination}",
+        "Avec mes amis {name1} et {name2}, je souhaite aller de {origin} à {destination}",
+        "Avec mes amis {name1} et {name2}, je veux aller de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "Je dois aller chercher {name} à {destination} depuis {origin}",
+      "variations": [
+        "Je voudrais aller chercher {name} à {destination} depuis {origin}",
+        "J'aimerais aller chercher {name} à {destination} depuis {origin}",
+        "Il me faut aller chercher {name} à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} avec {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} avec {name}",
+        "Je souhaite aller de {origin} à {destination} avec {name}",
+        "Je veux aller de {origin} à {destination} avec {name}"
+      ]
+    },
+    {
+      "template": "depuis {origin} je veux aller a {name} pour boire un monaco",
+      "variations": [
+        "depuis {origin} je voudrais aller a {name} pour boire un monaco",
+        "depuis {origin} j'aimerais aller a {name} pour boire un monaco",
+        "depuis {origin} je souhaite aller a {name} pour boire un monaco"
+      ]
+    },
+    {
+      "template": "Je voudrais aller voir {name} qui habite à {destination} en partant de {origin}",
+      "variations": [
+        "J'aimerais aller voir {name} qui habite à {destination} depuis {origin}",
+        "Je dois aller voir {name} qui habite à {destination} en partant de {origin}",
+        "Il me faut aller voir {name} qui habite à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour rendre visite à {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour rendre visite à {name}",
+        "Je souhaite aller de {origin} à {destination} pour rendre visite à {name}",
+        "Je dois aller de {origin} à {destination} pour rendre visite à {name}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} avec mon ami {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} avec mon ami {name}",
+        "Je souhaite aller de {origin} à {destination} avec mon ami {name}",
+        "Je veux aller de {origin} à {destination} avec mon ami {name}"
+      ]
+    },
+    {
+      "template": "Je dois aller chercher mon ami {name} à {destination} depuis {origin}",
+      "variations": [
+        "Je voudrais aller chercher mon ami {name} à {destination} depuis {origin}",
+        "J'aimerais aller chercher mon ami {name} à {destination} depuis {origin}",
+        "Il me faut aller chercher mon ami {name} à {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour voir {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour voir {name}",
+        "Je souhaite aller de {origin} à {destination} pour voir {name}",
+        "Je dois aller de {origin} à {destination} pour voir {name}"
+      ]
+    },
+    {
+      "template": "Avec {name}, je voudrais aller de {origin} à {destination}",
+      "variations": [
+        "Avec {name}, j'aimerais aller de {origin} à {destination}",
+        "Avec {name}, je souhaite aller de {origin} à {destination}",
+        "Avec {name}, je veux aller de {origin} à {destination}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour rencontrer {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour rencontrer {name}",
+        "Je souhaite aller de {origin} à {destination} pour rencontrer {name}",
+        "Je dois aller de {origin} à {destination} pour rencontrer {name}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour fêter l'anniversaire de {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour fêter l'anniversaire de {name}",
+        "Je dois aller de {origin} à {destination} pour fêter l'anniversaire de {name}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour assister au mariage de {name}",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour assister au mariage de {name}",
+        "Je dois aller de {origin} à {destination} pour assister au mariage de {name}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à {destination} pour voir {name} jouer",
+      "variations": [
+        "J'aimerais aller de {origin} à {destination} pour voir {name} jouer",
+        "Je souhaite aller de {origin} à {destination} pour voir {name} jouer"
+      ]
+    }
+  ],
+  "ambiguites_mots_communs": [
+    {
+      "template": "Je voudrais aller au port de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller au port de {destination} depuis {origin}",
+        "Je souhaite aller au port de {destination} depuis {origin}",
+        "Je veux aller au port de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Comment me rendre à Port-Boulet depuis {origin} ?",
+      "variations": [
+        "Comment aller à Port-Boulet depuis {origin} ?",
+        "Comment faire pour aller à Port-Boulet depuis {origin} ?",
+        "Comment se rendre à Port-Boulet depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à Port-Boulet",
+      "variations": [
+        "J'aimerais aller de {origin} à Port-Boulet",
+        "Je souhaite aller de {origin} à Port-Boulet",
+        "Je veux aller de {origin} à Port-Boulet"
+      ]
+    },
+    {
+      "template": "Je voudrais aller au pont de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller au pont de {destination} depuis {origin}",
+        "Je souhaite aller au pont de {destination} depuis {origin}",
+        "Je veux aller au pont de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller à la gare de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller à la gare de {destination} depuis {origin}",
+        "Je souhaite aller à la gare de {destination} depuis {origin}",
+        "Je veux aller à la gare de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} à la gare de {destination}",
+      "variations": [
+        "J'aimerais aller de {origin} à la gare de {destination}",
+        "Je souhaite aller de {origin} à la gare de {destination}",
+        "Je veux aller de {origin} à la gare de {destination}"
+      ]
+    },
+    {
+      "template": "Comment me rendre à la gare de {destination} depuis {origin} ?",
+      "variations": [
+        "Comment aller à la gare de {destination} depuis {origin} ?",
+        "Comment faire pour aller à la gare de {destination} depuis {origin} ?"
+      ]
+    },
+    {
+      "template": "Je voudrais aller au centre de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller au centre de {destination} depuis {origin}",
+        "Je souhaite aller au centre de {destination} depuis {origin}",
+        "Je veux aller au centre de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller de {origin} au centre de {destination}",
+      "variations": [
+        "J'aimerais aller de {origin} au centre de {destination}",
+        "Je souhaite aller de {origin} au centre de {destination}",
+        "Je veux aller de {origin} au centre de {destination}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller à la place de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller à la place de {destination} depuis {origin}",
+        "Je souhaite aller à la place de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller au marché de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller au marché de {destination} depuis {origin}",
+        "Je souhaite aller au marché de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller à l'église de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller à l'église de {destination} depuis {origin}",
+        "Je souhaite aller à l'église de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller au château de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller au château de {destination} depuis {origin}",
+        "Je souhaite aller au château de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller à la mairie de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller à la mairie de {destination} depuis {origin}",
+        "Je souhaite aller à la mairie de {destination} depuis {origin}"
+      ]
+    },
+    {
+      "template": "Je voudrais aller au musée de {destination} depuis {origin}",
+      "variations": [
+        "J'aimerais aller au musée de {destination} depuis {origin}",
+        "Je souhaite aller au musée de {destination} depuis {origin}"
+      ]
+    }
+  ]
+}

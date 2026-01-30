@@ -1,0 +1,21 @@
+id,origin,destination,is_valid
+93,Marles,Saint-Pol,true
+100,Longuyon,Marles,true
+75,Milhaud,,false
+22,Maintenon,La chaize,true
+85,,,false
+48,Grisolles,Mandelieu,true
+66,Morannes,Meulan,true
+78,,,false
+16,Mullerhof,Rosult,true
+73,Montville,Tourcoing,true
+82,Plestan,Vif,true
+86,,,false
+14,Bréval,Bischheim,true
+99,Castelnaudary,Tonneins,true
+61,Lyon saint,Dourdan,true
+72,Hellemmes,Valergues,true
+35,Chabris,Istres,true
+90,Biot,Mommenheim,true
+28,Charleville,Toury,true
+12,Amilly ouerray,Sarrance,true
