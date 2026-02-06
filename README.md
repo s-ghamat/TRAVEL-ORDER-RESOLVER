@@ -73,7 +73,7 @@ T-AIA-911-PAR_14/
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/EpitechMscProPromo2026/T-AIA-911-PAR_14.git
+git clone git@github.com:s-ghamat/TRAVEL-ORDER-RESOLVER.git
 cd T-AIA-911-PAR_14
 ```
 
