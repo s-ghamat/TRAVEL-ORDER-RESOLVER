@@ -2,7 +2,7 @@
 
 NLP and SNCF data project for resolving French travel orders into train itineraries.
 
-The system extracts departure and destination cities from natural language commands, validates the order, resolves stations, and builds an itinerary using SNCF schedule data.
+The system extracts departure and destination cities from natural language commands, validates the order, resolves stations and builds an itinerary using SNCF schedule data.
 
 ## Overview
 
